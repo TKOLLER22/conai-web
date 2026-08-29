@@ -1,4 +1,34 @@
 {
+  "common": {
+    "nav": {
+      "about": "About us",
+      "services": "Services",
+      "forCompanies": "For companies",
+      "forIndividuals": "For individuals",
+      "roiCalc": "ROI calculator",
+      "work": "Projects",
+      "pricing": "Pricing",
+      "insights": "Insights",
+      "contact": "Contact",
+      "careers": "Careers",
+      "referral": "Referrals",
+      "faq": "FAQ",
+      "privacy": "Privacy policy",
+      "advisor": "AI advisor"
+    },
+    "cta": {
+      "audit": "Free AI Audit",
+      "bookAudit": "Book a free AI Audit",
+      "auditMeta": "30 minutes · no strings attached · everything stays between us"
+    },
+    "footer": {
+      "tagline": "AI implementation, engineering and consulting for small and mid-sized companies across Slovakia and Czechia.",
+      "firma": "Company",
+      "sluzby": "Services",
+      "pomoc": "Support",
+      "legal": "ConAI is a brand of ELYSIA, s. r. o."
+    }
+  },
   "home": {
     "hero": {
       "title": "AI built into your business, not bolted on."

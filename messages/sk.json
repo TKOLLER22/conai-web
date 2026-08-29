@@ -1,4 +1,34 @@
 {
+  "common": {
+    "nav": {
+      "about": "O nás",
+      "services": "Služby",
+      "forCompanies": "Pre firmy",
+      "forIndividuals": "Pre jednotlivcov",
+      "roiCalc": "ROI kalkulačka",
+      "work": "Projekty",
+      "pricing": "Cenník",
+      "insights": "Články",
+      "contact": "Kontakt",
+      "careers": "Kariéra",
+      "referral": "Odporúčania",
+      "faq": "Časté otázky",
+      "privacy": "Ochrana osobných údajov",
+      "advisor": "AI poradca"
+    },
+    "cta": {
+      "audit": "AI Audit zadarmo",
+      "bookAudit": "Rezervovať bezplatný AI Audit",
+      "auditMeta": "30 minút · bez záväzkov · všetko ostáva medzi nami"
+    },
+    "footer": {
+      "tagline": "Implementácia AI, vývoj a poradenstvo pre malé a stredné firmy na Slovensku a v Česku.",
+      "firma": "Firma",
+      "sluzby": "Služby",
+      "pomoc": "Pomoc",
+      "legal": "ConAI je značkou spoločnosti ELYSIA, s. r. o."
+    }
+  },
   "home": {
     "hero": {
       "title": "…aby AI nebola len trendy nálepka."

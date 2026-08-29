@@ -4,6 +4,9 @@ import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import SmoothScroll from "@/components/layout/SmoothScroll";
 import "../globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -50,7 +53,16 @@ export default async function LocaleLayout({
       className={`${bricolage.variable} ${inter.variable} ${jetbrains.variable}`}
     >
       <body>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <noscript>
+          <style>{`[data-reveal]{opacity:1 !important;transform:none !important}`}</style>
+        </noscript>
+        <NextIntlClientProvider>
+          <Header />
+          <SmoothScroll>
+            {children}
+            <Footer />
+          </SmoothScroll>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
