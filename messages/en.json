@@ -31,7 +31,168 @@
   },
   "home": {
     "hero": {
-      "title": "AI built into your business, not bolted on."
+      "kicker": "AI implementation & engineering",
+      "title": "AI built into your business, not bolted on.",
+      "subtitle": "Implementation, engineering and consulting for SMEs across Slovakia and Czechia. From a free audit all the way to the systems other agencies turn down.",
+      "cta": "Free AI audit",
+      "bullets": [
+        "Slovakia & Czechia, on-site or remote",
+        "Your data never leaves your company",
+        "The 30-minute audit is free"
+      ],
+      "scroll": "scroll"
+    },
+    "stats": {
+      "items": [
+        {
+          "display": "20 %",
+          "count": {
+            "to": 20,
+            "suffix": " %"
+          },
+          "caption": "of EU companies used AI in 2025 — up from 13.5 % the year before.",
+          "source": "Eurostat, 2025"
+        },
+        {
+          "display": "11 % vs 41 %",
+          "caption": "small versus large companies using AI in the EU. That gap is the opportunity.",
+          "source": "Eurostat, 2024"
+        },
+        {
+          "display": "45 %",
+          "count": {
+            "to": 45,
+            "suffix": " %"
+          },
+          "caption": "of work activities can be automated with technology that already exists.",
+          "source": "McKinsey"
+        },
+        {
+          "display": "1 day/week",
+          "caption": "is what the average employee loses just searching for information.",
+          "source": "McKinsey"
+        }
+      ]
+    },
+    "ladder": {
+      "kicker": "How we work",
+      "title": "One partner, the whole ladder",
+      "steps": [
+        {
+          "index": "01",
+          "title": "Navigation / Consulting",
+          "desc": "Audit, plan and optional team training. You leave with an AI roadmap you can execute with or without us.",
+          "price": "from ~€500"
+        },
+        {
+          "index": "02",
+          "title": "Pilot",
+          "desc": "One service or automation with measurable impact. We build it, ship it and tune it live for 30 days.",
+          "price": "from ~€2,500"
+        },
+        {
+          "index": "03",
+          "title": "Local & custom",
+          "desc": "Models running on your hardware, RAG over your documents, automation across departments. Data never leaves the building.",
+          "price": "from ~€8,000"
+        },
+        {
+          "index": "04",
+          "title": "Bespoke",
+          "desc": "Pipelines, platforms and multi-agent systems from scratch. Priced as a product, not a package.",
+          "price": "custom scope"
+        }
+      ],
+      "agencyTag": "Where most agencies stop",
+      "quote": "“Automation is where most agencies stop. For ConAI, it's the middle of the ladder.”",
+      "linkPackages": "See all orientation packages",
+      "linkPricing": "Indicative pricing & ROI calculator"
+    },
+    "why": {
+      "kicker": "Why ConAI",
+      "title": "What you won't find at an automation agency",
+      "badge": "In development",
+      "rows": [
+        {
+          "title": "Your own AI: local and custom",
+          "body": "Models run on your hardware — case files, medical records and manufacturing know-how never leave the building. And when you need more, we build quantitative pipelines, custom platforms and multi-agent systems from scratch.",
+          "link": "How it works"
+        },
+        {
+          "title": "AI strategic advisor",
+          "body": "An AI consultant that knows your company's context. A strategic sparring partner for owners — available around the clock, not once a quarter.",
+          "link": "How it works"
+        },
+        {
+          "title": "Owner's dashboard",
+          "body": "Chatbot, social media, documents and your company AI advisor in one place. Built so you keep oversight and control without a technical team."
+        }
+      ]
+    },
+    "projects": {
+      "kicker": "Projects",
+      "title": "Built for real businesses",
+      "featured": [
+        {
+          "tag": "Marketing",
+          "title": "Automated pipeline for social media content"
+        },
+        {
+          "tag": "Local AI",
+          "title": "Local multimodal RAG engine"
+        },
+        {
+          "tag": "Fintech analytics",
+          "title": "Portfolio dashboard with advanced metrics"
+        },
+        {
+          "tag": "Market intelligence",
+          "title": "Early-warning system & anomaly detection"
+        }
+      ],
+      "tags": [
+        "FinTech",
+        "RAG",
+        "On-premise",
+        "n8n orchestration",
+        "NLP",
+        "Real-time",
+        "LLM / GenAI",
+        "Multimodal AI",
+        "Agentic workflows",
+        "Data sovereignty",
+        "Python",
+        "Chatbots",
+        "Process automation",
+        "Computer vision"
+      ],
+      "more": "More projects"
+    },
+    "process": {
+      "kicker": "Process",
+      "title": "How it works",
+      "steps": [
+        {
+          "title": "Audit",
+          "desc": "A free 30-minute call. We map where AI pays off for you."
+        },
+        {
+          "title": "Plan",
+          "desc": "You get an AI roadmap with a proposal and implementation options."
+        },
+        {
+          "title": "Deploy",
+          "desc": "We build, integrate and launch."
+        },
+        {
+          "title": "Optimize",
+          "desc": "We measure, tune and — if agreed — keep developing."
+        }
+      ],
+      "link": "Read our articles on practical AI for business"
+    },
+    "cta": {
+      "title": "Find out if your company is ready for AI."
     }
   },
   "notFound": {

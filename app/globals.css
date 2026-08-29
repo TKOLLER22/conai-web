@@ -131,3 +131,69 @@ body::after {
   opacity: 0.022;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
+
+.scroll-hint-line {
+  width: 1px;
+  height: 44px;
+  background: linear-gradient(to bottom, var(--color-brand-400), transparent);
+  animation: scroll-hint 2.2s var(--ease-smooth) infinite;
+  transform-origin: top;
+}
+@keyframes scroll-hint {
+  0% { transform: scaleY(0); opacity: 0; }
+  35% { transform: scaleY(1); opacity: 1; }
+  100% { transform: scaleY(1) translateY(18px); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-hint-line { animation: none; }
+}
+
+/* Ladder: pinned horizontal mode (set by GSAP matchMedia on desktop) */
+[data-ladder][data-pinned] {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  padding-block: 0;
+}
+[data-ladder][data-pinned] .ladder-track {
+  flex-direction: row;
+  align-items: center;
+  width: max-content;
+  padding-left: max(2rem, calc((100vw - 72rem) / 2 + 2rem));
+  padding-right: 6rem;
+}
+[data-ladder][data-pinned] .ladder-step {
+  transform: translateY(var(--stair));
+}
+
+/* Tag marquee */
+.marquee-track {
+  animation: marquee 42s linear infinite;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-100%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    overflow-x: auto;
+  }
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* Process step activation */
+.process-step {
+  opacity: 0.38;
+  transition: opacity 0.6s var(--ease-smooth);
+}
+.process-step.process-active {
+  opacity: 1;
+}
+.process-step.process-active .process-num {
+  border-color: var(--color-brand-400);
+  color: var(--color-brand-300);
+  background: color-mix(in srgb, var(--color-brand-500) 12%, transparent);
+}

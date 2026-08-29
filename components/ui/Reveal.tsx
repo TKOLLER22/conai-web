@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, type ReactNode } from "react";
-import { gsap, useGSAP, MOTION_OK } from "@/lib/gsap";
+import { gsap, motionDisabled, useGSAP, MOTION_OK } from "@/lib/gsap";
 
 /**
  * Fade-up reveal on scroll enter, once. Children are hidden via the
@@ -27,6 +27,10 @@ export default function Reveal({
       const mm = gsap.matchMedia();
 
       mm.add(MOTION_OK, () => {
+        if (motionDisabled()) {
+          gsap.set(el, { autoAlpha: 1 });
+          return;
+        }
         gsap.fromTo(
           el,
           { autoAlpha: 0, y },

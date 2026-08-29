@@ -31,7 +31,168 @@
   },
   "home": {
     "hero": {
-      "title": "…aby AI nebola len trendy nálepka."
+      "kicker": "Implementácia AI & vývoj",
+      "title": "…aby AI nebola len trendy nálepka.",
+      "subtitle": "Implementácia, vývoj a poradenstvo pre malé a stredné firmy na Slovensku a v Česku. Od bezplatného auditu až po systémy, ktoré iné agentúry odmietnu.",
+      "cta": "AI audit zadarmo",
+      "bullets": [
+        "Slovensko a Česko, osobne aj na diaľku",
+        "Vaše dáta neopúšťajú firmu",
+        "30-minútový audit je zadarmo"
+      ],
+      "scroll": "skrolujte"
+    },
+    "stats": {
+      "items": [
+        {
+          "display": "20 %",
+          "count": {
+            "to": 20,
+            "suffix": " %"
+          },
+          "caption": "firiem v EÚ využívalo AI v roku 2025. Rok predtým to bolo 13,5 %.",
+          "source": "Eurostat, 2025"
+        },
+        {
+          "display": "11 % vs 41 %",
+          "caption": "malé verzus veľké firmy využívajúce AI v EÚ. Práve v tej medzere je príležitosť.",
+          "source": "Eurostat, 2024"
+        },
+        {
+          "display": "45 %",
+          "count": {
+            "to": 45,
+            "suffix": " %"
+          },
+          "caption": "pracovných činností sa dá automatizovať technológiou, ktorá existuje už dnes.",
+          "source": "McKinsey"
+        },
+        {
+          "display": "1 deň/týždeň",
+          "caption": "stratí priemerný zamestnanec len hľadaním informácií.",
+          "source": "McKinsey"
+        }
+      ]
+    },
+    "ladder": {
+      "kicker": "Ako pracujeme",
+      "title": "Jeden partner, viaceré možnosti",
+      "steps": [
+        {
+          "index": "01",
+          "title": "Navigácia / Poradenstvo",
+          "desc": "Audit, plán a prípadné zaškolenie tímu. Odchádzate s AI roadmapou, ktorú viete použiť aj bez nás.",
+          "price": "od ~500 €"
+        },
+        {
+          "index": "02",
+          "title": "Pilot",
+          "desc": "Jedna služba alebo automatizácia s merateľným dopadom. Nasadíme, spustíme a 30 dní ladíme naostro.",
+          "price": "od ~2 500 €"
+        },
+        {
+          "index": "03",
+          "title": "Lokálne & na mieru",
+          "desc": "Modely bežia u vás, RAG nad vašimi dokumentmi, automatizácia naprieč oddeleniami. Dáta neopustia budovu.",
+          "price": "od ~8 000 €"
+        },
+        {
+          "index": "04",
+          "title": "Bespoke",
+          "desc": "Pipeline-y, platformy a multi-agentové systémy od nuly. Ocenené ako produkt, nie ako balíček.",
+          "price": "podľa dohody"
+        }
+      ],
+      "agencyTag": "Tu väčšina agentúr končí",
+      "quote": "„Pri základnej automatizácii väčšina agentúr skončí. My v ConAI chceme byť vaším partnerom — pre nás je to len začiatok.“",
+      "linkPackages": "Pozrieť všetky orientačné balíčky",
+      "linkPricing": "Orientačné ceny a ROI kalkulačka"
+    },
+    "why": {
+      "kicker": "Prečo ConAI",
+      "title": "Čo bežne nenájdete, ale u nás áno",
+      "badge": "Práve vyvíjame",
+      "rows": [
+        {
+          "title": "Vlastná AI: lokálne a na mieru",
+          "body": "Modely bežia na vašom hardvéri — spisy, zdravotné záznamy ani výrobné know-how nikdy neopustia budovu. A keď treba viac, staviame kvantitatívne pipeline-y, vlastné platformy a multi-agentové systémy od nuly.",
+          "link": "Ako to funguje"
+        },
+        {
+          "title": "AI strategický poradca",
+          "body": "AI konzultant, ktorý pozná kontext vašej firmy. Strategický sparring partner pre majiteľov — k dispozícii nonstop, nie raz za kvartál.",
+          "link": "Ako to funguje"
+        },
+        {
+          "title": "Dashboard pre majiteľov",
+          "body": "Chatbot, sociálne siete, dokumenty aj váš firemný AI poradca na jednom mieste. Postavený tak, aby ste mali prehľad a kontrolu aj bez technického tímu."
+        }
+      ]
+    },
+    "projects": {
+      "kicker": "Projekty",
+      "title": "Postavené pre firmy a jednotlivcov",
+      "featured": [
+        {
+          "tag": "Marketing",
+          "title": "Automatizovaný pipeline na tvorbu materiálov pre siete"
+        },
+        {
+          "tag": "Lokálna AI",
+          "title": "Lokálny multimodálny RAG engine"
+        },
+        {
+          "tag": "Fintech analytika",
+          "title": "Portfóliový dashboard s pokročilými metrikami"
+        },
+        {
+          "tag": "Trhová inteligencia",
+          "title": "Early-warning system a detekcia anomálií"
+        }
+      ],
+      "tags": [
+        "FinTech",
+        "RAG",
+        "On-premise",
+        "Orchestrácia n8n",
+        "NLP",
+        "Real-time",
+        "LLM / GenAI",
+        "Multimodálna AI",
+        "Agentické workflowy",
+        "Suverenita dát",
+        "Python",
+        "Chatboty",
+        "Automatizácia procesov",
+        "Počítačové videnie"
+      ],
+      "more": "Viac projektov"
+    },
+    "process": {
+      "kicker": "Proces",
+      "title": "Ako naša spolupráca prebieha",
+      "steps": [
+        {
+          "title": "Audit",
+          "desc": "Bezplatný 30-minútový hovor. Zmapujeme, kde a či sa vám AI oplatí."
+        },
+        {
+          "title": "Plán",
+          "desc": "Dostanete AI roadmapu s návrhom a možnosťami implementácie."
+        },
+        {
+          "title": "Nasadenie",
+          "desc": "Postavíme, zapojíme a spustíme."
+        },
+        {
+          "title": "Optimalizácia",
+          "desc": "Meriame, ladíme a v prípade dohody rozvíjame ďalej."
+        }
+      ],
+      "link": "Čítať naše články o praktickej AI pre firmy"
+    },
+    "cta": {
+      "title": "Zistite, či je vaša firma pripravená na nasadenie AI."
     }
   },
   "notFound": {

@@ -101,11 +101,10 @@ export default function Footer() {
       </Container>
 
       {/* Oversized wordmark bleeding off the bottom edge */}
-      <div
-        aria-hidden
-        className="pointer-events-none select-none text-center font-display text-[22vw] font-bold leading-[0.72] tracking-tight text-white/[0.025]"
-      >
-        ConAI
+      <div aria-hidden className="pointer-events-none relative h-[10vw] select-none overflow-hidden">
+        <span className="absolute inset-x-0 top-0 text-center font-display text-[21vw] font-bold leading-[0.78] tracking-tight text-white/[0.025]">
+          ConAI
+        </span>
       </div>
     </footer>
   );

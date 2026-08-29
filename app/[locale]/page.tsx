@@ -1,15 +1,26 @@
-import { setRequestLocale } from "next-intl/server";
-import { useTranslations } from "next-intl";
-import { use } from "react";
+import { setRequestLocale, getTranslations } from "next-intl/server";
+import Hero from "@/components/home/Hero";
+import Stats from "@/components/home/Stats";
+import Ladder from "@/components/home/Ladder";
+import WhyConai from "@/components/home/WhyConai";
+import ProjectsTeaser from "@/components/home/ProjectsTeaser";
+import Process from "@/components/home/Process";
+import FinalCta from "@/components/home/FinalCta";
 
-export default function HomePage({ params }: PageProps<"/[locale]">) {
-  const { locale } = use(params);
+export default async function HomePage({ params }: PageProps<"/[locale]">) {
+  const { locale } = await params;
   setRequestLocale(locale);
-  const t = useTranslations("home.hero");
+  const t = await getTranslations("home");
 
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <h1 className="text-display text-5xl">{t("title")}</h1>
+    <main>
+      <Hero />
+      <Stats />
+      <Ladder />
+      <WhyConai />
+      <ProjectsTeaser />
+      <Process />
+      <FinalCta title={t("cta.title")} />
     </main>
   );
 }
