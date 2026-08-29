@@ -19,22 +19,22 @@ function Boundary({ label }: { label: string }) {
     <>
       {/* Stacked flow: horizontal dashed rule with a centered label */}
       <div className="ladder-boundary-h flex w-full max-w-xl items-center gap-5" aria-hidden>
-        <span className="flex-1 border-t border-dashed border-signal-300/40" />
-        <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-signal-300/90">
+        <span className="flex-1 border-t border-dashed border-signal-300/60" />
+        <span className="font-mono text-sm uppercase tracking-[0.2em] text-signal-300">
           {label}
         </span>
-        <span className="flex-1 border-t border-dashed border-signal-300/40" />
+        <span className="flex-1 border-t border-dashed border-signal-300/60" />
       </div>
       {/* Pinned flow: a vertical dashed checkpoint the scroll crosses */}
       <div
         className="ladder-boundary-v hidden shrink-0 flex-col items-center gap-5 self-stretch py-6"
         aria-hidden
       >
-        <span className="w-px flex-1 border-l border-dashed border-signal-300/40" />
-        <span className="whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.18em] text-signal-300/90 [writing-mode:vertical-rl]">
+        <span className="w-px flex-1 border-l border-dashed border-signal-300/60" />
+        <span className="whitespace-nowrap font-mono text-base uppercase tracking-[0.22em] text-signal-300 [writing-mode:vertical-rl]">
           {label}
         </span>
-        <span className="w-px flex-1 border-l border-dashed border-signal-300/40" />
+        <span className="w-px flex-1 border-l border-dashed border-signal-300/60" />
       </div>
     </>
   );

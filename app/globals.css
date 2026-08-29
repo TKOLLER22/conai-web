@@ -180,7 +180,7 @@ body::after {
 }
 [data-ladder][data-pinned] .ladder-boundary-v {
   display: flex;
-  height: 22rem;
+  height: 26rem;
 }
 [data-ladder][data-pinned] .ladder-boundary-h {
   display: none;
