@@ -53,3 +53,9 @@ Always ask as many questions as you need. If you aren't 100% sure, don't hesitat
 ## Deployment
 
 Hosted on the user's Coolify instance on a VPS. Ask the user for anything needed for deployment (repo, domain, env, etc.).
+
+## Roadmap (user-requested future features)
+
+- Light/dark mode switch (site is dark-only today; build tokens accordingly).
+- Better localization UX: no visible `/sk` / `/en` URL prefixes (cookie/negotiation-based, e.g. next-intl `localePrefix: 'never'`) — weigh SEO/hreflang tradeoffs before switching.
+- Revisit the color palette — the user is NOT fully sold on the current violet-on-dark; propose bolder alternatives while keeping ConAI brand recognition.

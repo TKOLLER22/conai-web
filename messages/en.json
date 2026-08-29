@@ -50,13 +50,13 @@
             "to": 20,
             "suffix": " %"
           },
-          "caption": "of EU companies used AI in 2025 — up from 13.5 % the year before.",
-          "source": "Eurostat, 2025"
+          "caption": "of EU companies already use AI for real",
+          "source": "Eurostat 2025 · up from 13.5 %"
         },
         {
           "display": "11 % vs 41 %",
-          "caption": "small versus large companies using AI in the EU. That gap is the opportunity.",
-          "source": "Eurostat, 2024"
+          "caption": "small vs large companies using AI. That gap is your opportunity.",
+          "source": "Eurostat 2024"
         },
         {
           "display": "45 %",
@@ -64,12 +64,12 @@
             "to": 45,
             "suffix": " %"
           },
-          "caption": "of work activities can be automated with technology that already exists.",
+          "caption": "of work activities can be automated today",
           "source": "McKinsey"
         },
         {
           "display": "1 day/week",
-          "caption": "is what the average employee loses just searching for information.",
+          "caption": "lost per employee just searching for information",
           "source": "McKinsey"
         }
       ]
@@ -135,36 +135,44 @@
       "featured": [
         {
           "tag": "Marketing",
-          "title": "Automated pipeline for social media content"
+          "title": "Automated pipeline for social media content",
+          "desc": "From idea to finished visual with no human touch — generation, editing and publishing in one flow.",
+          "chips": [
+            "n8n orchestration",
+            "Image generation",
+            "On-premise"
+          ]
         },
         {
           "tag": "Local AI",
-          "title": "Local multimodal RAG engine"
+          "title": "Local multimodal RAG engine",
+          "desc": "Search and answers over private documents, images and voice.",
+          "chips": [
+            "RAG",
+            "Multimodal AI",
+            "Data sovereignty"
+          ]
         },
         {
           "tag": "Fintech analytics",
-          "title": "Portfolio dashboard with advanced metrics"
+          "title": "Portfolio dashboard with advanced metrics",
+          "desc": "Consolidated real-time analytics from statements across multiple brokers.",
+          "chips": [
+            "FinTech",
+            "Real-time",
+            "Python"
+          ]
         },
         {
           "tag": "Market intelligence",
-          "title": "Early-warning system & anomaly detection"
+          "title": "Early-warning system & anomaly detection",
+          "desc": "Real-time short-squeeze and market-anomaly detection — NLP over news and data alike.",
+          "chips": [
+            "NLP",
+            "Real-time",
+            "Agentic workflows"
+          ]
         }
-      ],
-      "tags": [
-        "FinTech",
-        "RAG",
-        "On-premise",
-        "n8n orchestration",
-        "NLP",
-        "Real-time",
-        "LLM / GenAI",
-        "Multimodal AI",
-        "Agentic workflows",
-        "Data sovereignty",
-        "Python",
-        "Chatbots",
-        "Process automation",
-        "Computer vision"
       ],
       "more": "More projects"
     },

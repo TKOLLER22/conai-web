@@ -104,6 +104,11 @@
   );
 }
 
+@utility text-outline-brand {
+  -webkit-text-stroke: 1.5px color-mix(in srgb, var(--color-brand-400) 45%, transparent);
+  color: transparent;
+}
+
 @utility hairline-t {
   border-top: 1px solid var(--color-line);
 }
@@ -159,11 +164,29 @@ body::after {
   flex-direction: row;
   align-items: center;
   width: max-content;
-  padding-left: max(2rem, calc((100vw - 72rem) / 2 + 2rem));
-  padding-right: 6rem;
+  padding-left: max(2.5rem, calc((100vw - 88rem) / 2 + 2.5rem));
+  padding-right: 7rem;
+}
+[data-ladder][data-pinned] .ladder-track {
+  gap: 0;
+}
+[data-ladder][data-pinned] .ladder-heading {
+  width: 34rem;
+  padding-right: 5rem;
 }
 [data-ladder][data-pinned] .ladder-step {
-  transform: translateY(var(--stair));
+  align-self: center;
+  width: 30rem;
+  padding-right: 3.5rem;
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+}
+[data-ladder][data-pinned] .ladder-ghost {
+  display: block;
+}
+[data-ladder][data-pinned] .ladder-quote {
+  width: 38rem;
+  padding-left: 4rem;
 }
 
 /* Tag marquee */

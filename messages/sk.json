@@ -50,13 +50,13 @@
             "to": 20,
             "suffix": " %"
           },
-          "caption": "firiem v EÚ využívalo AI v roku 2025. Rok predtým to bolo 13,5 %.",
-          "source": "Eurostat, 2025"
+          "caption": "firiem v EÚ už reálne využíva AI",
+          "source": "Eurostat 2025 · rok predtým 13,5 %"
         },
         {
           "display": "11 % vs 41 %",
-          "caption": "malé verzus veľké firmy využívajúce AI v EÚ. Práve v tej medzere je príležitosť.",
-          "source": "Eurostat, 2024"
+          "caption": "malé vs veľké firmy s AI. Tá medzera je vaša príležitosť.",
+          "source": "Eurostat 2024"
         },
         {
           "display": "45 %",
@@ -64,12 +64,12 @@
             "to": 45,
             "suffix": " %"
           },
-          "caption": "pracovných činností sa dá automatizovať technológiou, ktorá existuje už dnes.",
+          "caption": "pracovných činností sa dá automatizovať už dnes",
           "source": "McKinsey"
         },
         {
           "display": "1 deň/týždeň",
-          "caption": "stratí priemerný zamestnanec len hľadaním informácií.",
+          "caption": "stratí zamestnanec čistým hľadaním informácií",
           "source": "McKinsey"
         }
       ]
@@ -135,36 +135,44 @@
       "featured": [
         {
           "tag": "Marketing",
-          "title": "Automatizovaný pipeline na tvorbu materiálov pre siete"
+          "title": "Automatizovaný pipeline na tvorbu materiálov pre siete",
+          "desc": "Od nápadu po hotový vizuál bez ľudského zásahu — generovanie, úprava aj publikovanie v jednom toku.",
+          "chips": [
+            "Orchestrácia n8n",
+            "Generovanie obrázkov",
+            "On-premise"
+          ]
         },
         {
           "tag": "Lokálna AI",
-          "title": "Lokálny multimodálny RAG engine"
+          "title": "Lokálny multimodálny RAG engine",
+          "desc": "Vyhľadávanie a odpovede nad súkromnými dokumentmi, obrázkami a hlasom.",
+          "chips": [
+            "RAG",
+            "Multimodálna AI",
+            "Suverenita dát"
+          ]
         },
         {
           "tag": "Fintech analytika",
-          "title": "Portfóliový dashboard s pokročilými metrikami"
+          "title": "Portfóliový dashboard s pokročilými metrikami",
+          "desc": "Konsolidovaná analytika v reálnom čase z výpisov viacerých brokerov.",
+          "chips": [
+            "FinTech",
+            "Real-time",
+            "Python"
+          ]
         },
         {
           "tag": "Trhová inteligencia",
-          "title": "Early-warning system a detekcia anomálií"
+          "title": "Early-warning system a detekcia anomálií",
+          "desc": "Detekcia short squeeze a trhových anomálií v reálnom čase — NLP nad správami aj dátami.",
+          "chips": [
+            "NLP",
+            "Real-time",
+            "Agentické workflowy"
+          ]
         }
-      ],
-      "tags": [
-        "FinTech",
-        "RAG",
-        "On-premise",
-        "Orchestrácia n8n",
-        "NLP",
-        "Real-time",
-        "LLM / GenAI",
-        "Multimodálna AI",
-        "Agentické workflowy",
-        "Suverenita dát",
-        "Python",
-        "Chatboty",
-        "Automatizácia procesov",
-        "Počítačové videnie"
       ],
       "more": "Viac projektov"
     },

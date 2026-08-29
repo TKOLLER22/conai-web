@@ -27,7 +27,7 @@ export default function Ladder() {
         const track = trackRef.current!;
         section.setAttribute("data-pinned", "");
 
-        const distance = () => track.scrollWidth - window.innerWidth + 96;
+        const distance = () => track.scrollWidth - window.innerWidth + 120;
 
         gsap.to(track, {
           x: () => -distance(),
@@ -57,49 +57,53 @@ export default function Ladder() {
       data-ladder
       className="hairline-t relative overflow-hidden py-24 md:py-32"
     >
-      <div ref={trackRef} className="ladder-track flex flex-col gap-10 px-6 sm:px-8 lg:gap-14">
+      <div
+        ref={trackRef}
+        className="ladder-track flex flex-col gap-20 px-6 sm:px-10"
+      >
         {/* Heading rides along as the first panel */}
-        <div className="ladder-heading flex max-w-xl shrink-0 flex-col justify-center gap-5 lg:w-[26rem]">
+        <div className="ladder-heading flex max-w-2xl shrink-0 flex-col justify-center gap-6">
           <Kicker>{t("kicker")}</Kicker>
-          <h2 className="text-display text-4xl md:text-5xl">{t("title")}</h2>
+          <h2 className="text-display text-4xl md:text-6xl">{t("title")}</h2>
         </div>
 
         {steps.map((step, i) => (
           <article
             key={step.index}
-            style={{ "--stair": `${(steps.length - 1 - i) * 2.75}rem` } as React.CSSProperties}
-            className="ladder-step relative flex min-h-[19rem] w-full shrink-0 flex-col rounded-3xl border border-line bg-ink-850/80 p-8 md:p-9 lg:h-[21rem] lg:w-[27rem]"
+            className="ladder-step relative w-full max-w-xl shrink-0 border-l border-line pl-8 md:pl-10"
           >
-            {i === 1 && (
-              <span className="absolute -top-3.5 left-8 -rotate-2 rounded-full border border-signal-300/40 bg-ink-900 px-4 py-1.5 font-mono text-[10px] uppercase tracking-[0.16em] text-signal-300">
-                {t("agencyTag")}
-              </span>
-            )}
-            <div className="flex items-start justify-between">
-              <span className="font-mono text-5xl font-medium text-brand-400/90">
+            <div className="flex flex-wrap items-center gap-4">
+              <span className="font-mono text-sm tracking-[0.2em] text-brand-400">
                 {step.index}
               </span>
               <span className="rounded-full border border-line px-3.5 py-1.5 font-mono text-xs text-fg-muted">
                 {step.price}
               </span>
+              {i === 1 && (
+                <span className="-rotate-2 rounded-full border border-signal-300/40 bg-signal-300/8 px-3.5 py-1.5 font-mono text-[10px] uppercase tracking-[0.16em] text-signal-300">
+                  {t("agencyTag")}
+                </span>
+              )}
             </div>
-            <div className="mt-auto pt-10">
-              <h3 className="font-display text-2xl font-semibold tracking-tight md:text-[1.7rem]">
-                {step.title}
-              </h3>
-              <p className="mt-3 text-[0.95rem] leading-relaxed text-fg-muted">
-                {step.desc}
-              </p>
-            </div>
+            <h3 className="text-display mt-8 text-3xl md:text-4xl">{step.title}</h3>
+            <p className="mt-5 max-w-[44ch] text-base leading-relaxed text-fg-muted md:text-lg">
+              {step.desc}
+            </p>
+            <span
+              aria-hidden
+              className="ladder-ghost text-outline-brand pointer-events-none absolute -top-12 right-2 hidden select-none font-display text-[8rem] font-bold leading-none"
+            >
+              {step.index}
+            </span>
           </article>
         ))}
 
         {/* Quote payoff */}
-        <div className="ladder-quote flex max-w-xl shrink-0 flex-col justify-center gap-8 lg:w-[34rem] lg:pl-10">
-          <blockquote className="font-display text-2xl font-medium leading-snug tracking-tight text-fg md:text-[1.75rem]">
+        <div className="ladder-quote flex max-w-2xl shrink-0 flex-col justify-center gap-9 border-l border-brand-500/40 pl-8 md:pl-10">
+          <blockquote className="text-display text-2xl leading-snug md:text-[2.1rem]">
             {t("quote")}
           </blockquote>
-          <div className="flex flex-col items-start gap-3">
+          <div className="flex flex-col items-start gap-3.5">
             <Button href="/services" variant="link">
               {t("linkPackages")}
             </Button>

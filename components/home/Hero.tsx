@@ -58,20 +58,20 @@ export default function Hero() {
         className="aura-brand absolute -right-[15%] top-1/2 h-[120vmin] w-[120vmin] -translate-y-1/2 opacity-70"
       />
 
-      <div className="mx-auto grid w-full max-w-6xl items-center gap-14 px-6 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-6">
+      <div className="mx-auto grid w-full max-w-[88rem] items-center gap-14 px-6 sm:px-10 lg:grid-cols-[1fr_1fr] lg:gap-0">
         <div className="relative z-10">
           <p data-hero-fade className="kicker mb-6">
             {t("kicker")}
           </p>
           <h1
             data-hero-title
-            className="text-display text-[clamp(2.6rem,7.2vw,4.9rem)]"
+            className="text-display text-[clamp(2.8rem,6.2vw,6.1rem)]"
           >
             {t("title")}
           </h1>
           <p
             data-hero-fade
-            className="mt-7 max-w-[50ch] text-lg leading-relaxed text-fg-muted"
+            className="mt-8 max-w-[48ch] text-lg leading-relaxed text-fg-muted md:text-xl"
           >
             {t("subtitle")}
           </p>
@@ -94,7 +94,7 @@ export default function Hero() {
         </div>
 
         <div className="relative hidden lg:block" data-hero-fade>
-          <Hero3D className="mx-auto aspect-square w-full max-w-[540px]" />
+          <Hero3D className="ml-auto aspect-square w-[min(46vw,850px)] lg:-mr-[5vw]" />
         </div>
       </div>
 

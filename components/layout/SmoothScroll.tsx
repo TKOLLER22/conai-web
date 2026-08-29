@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, type ReactNode } from "react";
-import { gsap, ScrollSmoother, useGSAP, DESKTOP } from "@/lib/gsap";
+import { gsap, motionDisabled, ScrollSmoother, useGSAP, DESKTOP } from "@/lib/gsap";
 
 /**
  * GSAP ScrollSmoother, desktop pointer devices only. Touch devices and
@@ -16,6 +16,7 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
     const mm = gsap.matchMedia();
 
     mm.add(DESKTOP, () => {
+      if (motionDisabled()) return;
       const smoother = ScrollSmoother.create({
         wrapper: wrapperRef.current!,
         content: contentRef.current!,

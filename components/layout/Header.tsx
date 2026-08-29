@@ -57,7 +57,7 @@ export default function Header() {
           : "border-b border-transparent"
       }`}
     >
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6 sm:px-8 md:h-[72px]">
+      <div className="mx-auto flex h-16 w-full max-w-[88rem] items-center justify-between px-6 sm:px-10 md:h-[76px]">
         <Link href="/" aria-label="ConAI" className="relative z-10 shrink-0">
           <Image
             src="/brand/logo-232.png"

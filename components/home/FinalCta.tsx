@@ -13,7 +13,7 @@ export default function FinalCta({ title }: { title: string }) {
         className="aura-brand absolute left-1/2 top-full h-[90vmin] w-[140vmin] -translate-x-1/2 -translate-y-1/3"
       />
       <Reveal className="relative flex flex-col items-center gap-10 py-10 text-center md:py-16">
-        <h2 className="text-display max-w-3xl text-4xl md:text-6xl">{title}</h2>
+        <h2 className="text-display max-w-4xl text-4xl md:text-7xl">{title}</h2>
         <Button href="/book-audit" size="lg">
           {t("bookAudit")}
         </Button>

@@ -19,7 +19,7 @@ export default function Section({
   return (
     <section
       id={id}
-      className={`relative py-24 md:py-36 ${rule ? "hairline-t" : ""} ${className}`}
+      className={`relative py-24 md:py-40 ${rule ? "hairline-t" : ""} ${className}`}
     >
       {container ? <Container>{children}</Container> : children}
     </section>

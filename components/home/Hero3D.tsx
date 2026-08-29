@@ -7,7 +7,7 @@ import type { Group, Mesh, MeshStandardMaterial } from "three";
 
 const MODEL_URL = "/models/conai-icon.glb";
 
-const BASE_SCALE = 1.5;
+const BASE_SCALE = 1.85;
 const BASE_TILT = 0.16;
 
 function Icon() {
@@ -73,7 +73,7 @@ export default function Hero3D({ className = "" }: { className?: string }) {
       <Canvas
         dpr={[1, 1.75]}
         frameloop={visible ? "always" : "never"}
-        camera={{ position: [0, 0, 4.0], fov: 38 }}
+        camera={{ position: [0, 0, 3.9], fov: 38 }}
         gl={{ antialias: true, alpha: true, powerPreference: "low-power" }}
         style={{ background: "transparent" }}
       >

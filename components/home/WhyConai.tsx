@@ -16,7 +16,7 @@ export default function WhyConai() {
     <Section rule>
       <Reveal>
         <Kicker>{t("kicker")}</Kicker>
-        <h2 className="text-display mt-5 max-w-2xl text-4xl md:text-5xl">
+        <h2 className="text-display mt-5 max-w-3xl text-4xl md:text-6xl">
           {t("title")}
         </h2>
       </Reveal>
@@ -35,13 +35,13 @@ export default function WhyConai() {
                   i % 2 ? "lg:order-2 text-right" : ""
                 }`}
               >
-                <span className="text-gradient-brand font-display text-[9rem] font-bold leading-none opacity-25">
+                <span className="text-outline-brand font-display text-[10rem] font-bold leading-none xl:text-[12rem]">
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
               <div className={`lg:col-span-7 ${i % 2 ? "lg:order-1" : ""}`}>
                 <div className="flex flex-wrap items-center gap-4">
-                  <h3 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">
+                  <h3 className="text-display text-3xl md:text-4xl">
                     {row.title}
                   </h3>
                   {i > 0 && (
@@ -50,7 +50,7 @@ export default function WhyConai() {
                     </span>
                   )}
                 </div>
-                <p className="mt-5 max-w-[58ch] leading-relaxed text-fg-muted">
+                <p className="mt-6 max-w-[56ch] text-lg leading-relaxed text-fg-muted">
                   {row.body}
                 </p>
                 {row.link && ROW_LINKS[i] && (

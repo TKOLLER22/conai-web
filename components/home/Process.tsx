@@ -50,11 +50,11 @@ export default function Process() {
 
   return (
     <Section rule>
-      <div ref={scope} className="grid gap-14 lg:grid-cols-[1fr_1.25fr] lg:gap-20">
+      <div ref={scope} className="grid gap-14 lg:grid-cols-[1fr_1.3fr] lg:gap-24">
         <div className="lg:sticky lg:top-32 lg:self-start">
           <Reveal>
             <Kicker>{t("kicker")}</Kicker>
-            <h2 className="text-display mt-5 text-4xl md:text-5xl">{t("title")}</h2>
+            <h2 className="text-display mt-5 text-4xl md:text-6xl">{t("title")}</h2>
             <div className="mt-8">
               <Button href="/insights" variant="link">
                 {t("link")}
@@ -66,22 +66,22 @@ export default function Process() {
         <ol className="relative flex flex-col">
           {steps.map((step, i) => (
             <Reveal key={step.title} delay={i * 0.05}>
-              <li className="process-step group relative grid grid-cols-[3.25rem_1fr] gap-6 pb-14 last:pb-0">
+              <li className="process-step group relative grid grid-cols-[4rem_1fr] gap-7 pb-16 md:gap-9 md:pb-20">
                 {/* connector */}
                 {i < steps.length - 1 && (
                   <span
                     aria-hidden
-                    className="absolute left-[1.625rem] top-14 h-[calc(100%-3.5rem)] w-px bg-line"
+                    className="absolute left-8 top-[4.5rem] h-[calc(100%-5rem)] w-px bg-line"
                   />
                 )}
-                <span className="process-num flex size-13 items-center justify-center rounded-full border border-line font-mono text-sm text-fg-muted transition-colors duration-500">
+                <span className="process-num flex size-16 items-center justify-center rounded-full border border-line font-mono text-base text-fg-muted transition-colors duration-500">
                   {i + 1}
                 </span>
-                <div className="pt-2.5">
-                  <h3 className="font-display text-xl font-semibold tracking-tight md:text-2xl">
+                <div className="pt-3">
+                  <h3 className="text-display text-2xl md:text-[2.1rem]">
                     {step.title}
                   </h3>
-                  <p className="mt-2.5 max-w-[46ch] leading-relaxed text-fg-muted">
+                  <p className="mt-3.5 max-w-[44ch] text-lg leading-relaxed text-fg-muted">
                     {step.desc}
                   </p>
                 </div>
