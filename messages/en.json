@@ -1,0 +1,12 @@
+{
+  "home": {
+    "hero": {
+      "title": "AI built into your business, not bolted on."
+    }
+  },
+  "notFound": {
+    "title": "This page doesn't exist.",
+    "description": "Either we moved it, or you've reached an address that never lived. Try again from the homepage.",
+    "cta": "Back to home"
+  }
+}

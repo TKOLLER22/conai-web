@@ -1,0 +1,12 @@
+{
+  "home": {
+    "hero": {
+      "title": "…aby AI nebola len trendy nálepka."
+    }
+  },
+  "notFound": {
+    "title": "Táto stránka neexistuje.",
+    "description": "Buď sme ju presunuli, alebo ste na adrese, ktorá nikdy nežila. Skúste to z domovskej stránky.",
+    "cta": "Späť na úvod"
+  }
+}

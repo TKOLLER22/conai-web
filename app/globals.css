@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme {
+  /* ConAI design tokens — see CLAUDE.md brand reference */
+  --color-ink-950: #0a0a10;
+  --color-ink-900: #0e0e15;
+  --color-ink-850: #12121b;
+  --color-ink-800: #15151f;
+  --color-ink-700: #1e1e2c;
+
+  --color-brand-300: #c4b5fd;
+  --color-brand-400: #a78bfa;
+  --color-brand-500: #8b5cf6;
+  --color-brand-600: #7c46f0;
+  --color-brand-700: #6d28d9;
+  --color-peri-400: #9e9eff;
+  --color-metal-500: #9843c6;
+  --color-mint-400: #34d399;
+  --color-signal-300: #fdba74;
+
+  --color-fg: #f4f4f6;
+  --color-fg-muted: #a3a3b2;
+  --color-fg-faint: #71717f;
+  --color-line: color-mix(in srgb, white 8%, transparent);
+  --color-line-strong: color-mix(in srgb, white 14%, transparent);
+
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "SF Mono", monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-ink-900);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-500);
+    color: white;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-400);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@utility kicker {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-brand-400);
+}
+
+@utility text-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+@utility text-gradient-brand {
+  background: linear-gradient(
+    100deg,
+    var(--color-brand-300) 0%,
+    var(--color-brand-400) 45%,
+    var(--color-peri-400) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Soft radial aura — position with inset/size utilities on an absolutely-placed element */
+@utility aura-brand {
+  background: radial-gradient(
+    ellipse 50% 50% at 50% 50%,
+    color-mix(in srgb, var(--color-brand-700) 55%, transparent) 0%,
+    color-mix(in srgb, var(--color-metal-500) 22%, transparent) 45%,
+    transparent 72%
+  );
+}
+
+@utility hairline-t {
+  border-top: 1px solid var(--color-line);
+}
+@utility hairline-b {
+  border-bottom: 1px solid var(--color-line);
+}
