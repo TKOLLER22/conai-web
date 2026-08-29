@@ -168,19 +168,19 @@ body::after {
   padding-right: 7rem;
 }
 [data-ladder][data-pinned] .ladder-track {
-  gap: 4.5rem;
+  gap: 5.5rem;
 }
 [data-ladder][data-pinned] .ladder-heading {
-  width: 32rem;
+  width: 38rem;
   padding-right: 3rem;
 }
 [data-ladder][data-pinned] .ladder-step {
   align-self: center;
-  width: 27rem;
+  width: 32rem;
 }
 [data-ladder][data-pinned] .ladder-boundary-v {
   display: flex;
-  height: 26rem;
+  height: min(32rem, 62vh);
 }
 [data-ladder][data-pinned] .ladder-boundary-h {
   display: none;

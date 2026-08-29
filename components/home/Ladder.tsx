@@ -43,7 +43,7 @@ function Boundary({ label }: { label: string }) {
 function Arrow() {
   return (
     <div className="ladder-arrow shrink-0 self-center text-brand-400/60" aria-hidden>
-      <MoveRight className="size-10 md:size-12" strokeWidth={1.25} />
+      <MoveRight className="size-10 md:size-14" strokeWidth={1.25} />
     </div>
   );
 }
@@ -102,7 +102,7 @@ export default function Ladder() {
           {/* Heading rides along as the first panel */}
           <div className="ladder-heading flex max-w-2xl shrink-0 flex-col justify-center gap-6">
             <Kicker>{t("kicker")}</Kicker>
-            <h2 className="text-display text-4xl md:text-6xl">{t("title")}</h2>
+            <h2 className="text-display text-4xl md:text-7xl">{t("title")}</h2>
           </div>
 
           {steps.map((step, i) => (
@@ -110,13 +110,13 @@ export default function Ladder() {
               {i > 0 &&
                 (i === 2 ? <Boundary label={t("agencyTag")} /> : <Arrow />)}
               <article className="ladder-step relative w-full max-w-xl shrink-0">
-                <span className="rounded-full border border-line px-4 py-1.5 font-mono text-xs text-fg-muted">
+                <span className="rounded-full border border-line px-4 py-1.5 font-mono text-xs text-fg-muted md:px-5 md:py-2 md:text-sm">
                   {step.price}
                 </span>
-                <h3 className="text-display mt-7 text-3xl md:text-4xl">
+                <h3 className="text-display mt-7 text-3xl md:text-5xl">
                   {step.title}
                 </h3>
-                <p className="mt-5 max-w-[44ch] text-base leading-relaxed text-fg-muted md:text-lg">
+                <p className="mt-6 max-w-[42ch] text-base leading-relaxed text-fg-muted md:text-xl">
                   {step.desc}
                 </p>
               </article>
@@ -126,12 +126,12 @@ export default function Ladder() {
       </section>
 
       {/* The quote gets its own moment after the scroll resolves */}
-      <Section className="!py-24 md:!py-32">
-        <Reveal className="max-w-4xl">
+      <Section className="!pt-16 !pb-28 md:!pt-6 md:!pb-36">
+        <Reveal className="mx-auto max-w-4xl text-center">
           <blockquote className="text-display text-3xl leading-snug md:text-5xl md:leading-[1.15]">
             {t("quote")}
           </blockquote>
-          <div className="mt-12 flex flex-wrap items-center gap-x-12 gap-y-5">
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-12 gap-y-5">
             <Button href="/services" variant="link">
               {t("linkPackages")}
             </Button>
