@@ -43,6 +43,11 @@
       "scroll": "skrolujte"
     },
     "stats": {
+      "headline": {
+        "display": "11 % vs 41 %",
+        "caption": "Len 11 % malých firiem v EÚ reálne využíva AI — pri veľkých je to 41 %. Tá medzera je vaša príležitosť.",
+        "source": "Eurostat 2024"
+      },
       "items": [
         {
           "display": "20 %",
@@ -50,13 +55,8 @@
             "to": 20,
             "suffix": " %"
           },
-          "caption": "firiem v EÚ už reálne využíva AI",
+          "caption": "firiem v EÚ už využíva AI",
           "source": "Eurostat 2025 · rok predtým 13,5 %"
-        },
-        {
-          "display": "11 % vs 41 %",
-          "caption": "malé vs veľké firmy s AI. Tá medzera je vaša príležitosť.",
-          "source": "Eurostat 2024"
         },
         {
           "display": "45 %",
@@ -69,7 +69,7 @@
         },
         {
           "display": "1 deň/týždeň",
-          "caption": "stratí zamestnanec čistým hľadaním informácií",
+          "caption": "stratí zamestnanec hľadaním informácií",
           "source": "McKinsey"
         }
       ]

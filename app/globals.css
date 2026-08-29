@@ -168,25 +168,28 @@ body::after {
   padding-right: 7rem;
 }
 [data-ladder][data-pinned] .ladder-track {
-  gap: 0;
+  gap: 4.5rem;
 }
 [data-ladder][data-pinned] .ladder-heading {
-  width: 34rem;
-  padding-right: 5rem;
+  width: 32rem;
+  padding-right: 3rem;
 }
 [data-ladder][data-pinned] .ladder-step {
   align-self: center;
-  width: 30rem;
-  padding-right: 3.5rem;
-  padding-top: 4rem;
-  padding-bottom: 3rem;
+  width: 27rem;
 }
-[data-ladder][data-pinned] .ladder-ghost {
-  display: block;
+[data-ladder][data-pinned] .ladder-boundary-v {
+  display: flex;
+  height: 22rem;
 }
-[data-ladder][data-pinned] .ladder-quote {
-  width: 38rem;
-  padding-left: 4rem;
+[data-ladder][data-pinned] .ladder-boundary-h {
+  display: none;
+}
+.ladder-arrow {
+  transform: rotate(90deg);
+}
+[data-ladder][data-pinned] .ladder-arrow {
+  transform: none;
 }
 
 /* Tag marquee */

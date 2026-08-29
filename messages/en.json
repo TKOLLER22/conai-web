@@ -43,6 +43,11 @@
       "scroll": "scroll"
     },
     "stats": {
+      "headline": {
+        "display": "11 % vs 41 %",
+        "caption": "Only 11 % of small EU companies actually use AI — versus 41 % of large ones. That gap is your opportunity.",
+        "source": "Eurostat 2024"
+      },
       "items": [
         {
           "display": "20 %",
@@ -50,13 +55,8 @@
             "to": 20,
             "suffix": " %"
           },
-          "caption": "of EU companies already use AI for real",
+          "caption": "of EU companies already use AI",
           "source": "Eurostat 2025 · up from 13.5 %"
-        },
-        {
-          "display": "11 % vs 41 %",
-          "caption": "small vs large companies using AI. That gap is your opportunity.",
-          "source": "Eurostat 2024"
         },
         {
           "display": "45 %",
