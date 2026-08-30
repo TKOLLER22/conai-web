@@ -65,9 +65,13 @@ export default function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300 ${
-        scrolled || open
-          ? "border-b border-line bg-ink-900/85 backdrop-blur-md"
-          : "border-b border-transparent"
+        open
+          ? // solid, unfiltered: backdrop-filter here would become the
+            // containing block for the fixed menu overlay and clip it
+            "border-b border-line bg-ink-900"
+          : scrolled
+            ? "border-b border-line bg-ink-900/85 backdrop-blur-md"
+            : "border-b border-transparent"
       }`}
     >
       <div className="mx-auto flex h-16 w-full max-w-[88rem] items-center justify-between px-6 sm:px-10 md:h-[76px]">
@@ -148,7 +152,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       <div
-        className={`fixed inset-0 -z-10 flex flex-col bg-ink-950/98 px-6 pb-10 pt-24 backdrop-blur-xl transition-opacity duration-300 md:hidden ${
+        className={`fixed inset-0 -z-10 flex flex-col bg-ink-950/[0.98] px-6 pb-10 pt-24 backdrop-blur-xl transition-opacity duration-300 md:hidden ${
           open ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
