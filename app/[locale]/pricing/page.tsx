@@ -45,7 +45,7 @@ export default async function PricingPage({
             <Reveal key={pkg.name} delay={i * 0.04}>
               <Link
                 href={pkg.href}
-                className="group grid items-baseline gap-2 border-t border-line py-7 transition-colors hover:bg-white/[0.02] md:grid-cols-12 md:gap-6 md:py-8"
+                className="group grid items-baseline gap-2 border-t border-line py-7 transition-colors hover:bg-fg/[0.03] md:grid-cols-12 md:gap-6 md:py-8"
               >
                 <h2 className="text-display text-2xl md:col-span-4 md:text-3xl">
                   {pkg.name}

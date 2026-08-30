@@ -89,9 +89,16 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       data-scroll-behavior="smooth"
+      suppressHydrationWarning
       className={`${bricolage.variable} ${inter.variable} ${jetbrains.variable}`}
     >
       <body>
+        {/* Theme boot: runs before paint of the content below — no flash. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem("conai-theme");if(t!=="light"&&t!=="dark"){t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"}document.documentElement.dataset.theme=t}catch(e){}`,
+          }}
+        />
         <JsonLd data={ORGANIZATION_JSONLD} />
         <noscript>
           <style>{`[data-reveal],[data-hero-fade]{opacity:1 !important;transform:none !important}`}</style>

@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import Logo from "@/components/ui/Logo";
 import { Container } from "@/components/ui/Section";
 
 const COLUMNS = [
@@ -36,7 +36,7 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="flex flex-col items-start gap-5">
             <Link href="/" aria-label="ConAI">
-              <Image src="/brand/logo-232.png" alt="ConAI" width={101} height={31} />
+              <Logo />
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-fg-muted">
               {t("footer.tagline")}
@@ -102,7 +102,7 @@ export default function Footer() {
 
       {/* Oversized wordmark bleeding off the bottom edge */}
       <div aria-hidden className="pointer-events-none relative h-[10vw] select-none overflow-hidden">
-        <span className="absolute inset-x-0 top-0 text-center font-display text-[21vw] font-bold leading-[0.78] tracking-tight text-white/[0.025]">
+        <span className="absolute inset-x-0 top-0 text-center font-display text-[21vw] font-bold leading-[0.78] tracking-tight text-fg/[0.03]">
           ConAI
         </span>
       </div>

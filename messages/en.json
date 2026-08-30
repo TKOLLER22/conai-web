@@ -31,7 +31,9 @@
       "mainNav": "Main navigation",
       "mobileNav": "Mobile navigation",
       "openMenu": "Open menu",
-      "closeMenu": "Close menu"
+      "closeMenu": "Close menu",
+      "themeLight": "Switch to light mode",
+      "themeDark": "Switch to dark mode"
     }
   },
   "home": {

@@ -1,11 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { Link } from "@/i18n/navigation";
 import Button from "@/components/ui/Button";
+import Logo from "@/components/ui/Logo";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 import LocaleSwitcher from "./LocaleSwitcher";
 
 const NAV = [
@@ -71,13 +72,7 @@ export default function Header() {
     >
       <div className="mx-auto flex h-16 w-full max-w-[88rem] items-center justify-between px-6 sm:px-10 md:h-[76px]">
         <Link href="/" aria-label="ConAI" className="relative z-10 shrink-0" onClick={close}>
-          <Image
-            src="/brand/logo-232.png"
-            alt="ConAI"
-            width={101}
-            height={31}
-            priority
-          />
+          <Logo priority />
         </Link>
 
         {/* Desktop nav */}
@@ -104,7 +99,7 @@ export default function Header() {
                         <li key={child.key}>
                           <Link
                             href={child.href}
-                            className="block rounded-lg px-4 py-2.5 transition-colors hover:bg-white/5 hover:text-fg"
+                            className="block rounded-lg px-4 py-2.5 transition-colors hover:bg-fg/5 hover:text-fg"
                           >
                             {t(`nav.${child.key}`)}
                           </Link>
@@ -127,7 +122,8 @@ export default function Header() {
           </ul>
         </nav>
 
-        <div className="hidden items-center gap-5 md:flex">
+        <div className="hidden items-center gap-4 md:flex">
+          <ThemeToggle />
           <LocaleSwitcher />
           <Button href="/book-audit" className="!px-5 !py-2.5 !text-sm" arrow={false}>
             {t("cta.audit")}
@@ -185,7 +181,10 @@ export default function Header() {
           <Button href="/book-audit" arrow={false}>
             {t("cta.audit")}
           </Button>
-          <LocaleSwitcher />
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <LocaleSwitcher />
+          </div>
         </div>
       </div>
     </header>

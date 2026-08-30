@@ -31,7 +31,9 @@
       "mainNav": "Hlavná navigácia",
       "mobileNav": "Mobilná navigácia",
       "openMenu": "Otvoriť menu",
-      "closeMenu": "Zavrieť menu"
+      "closeMenu": "Zavrieť menu",
+      "themeLight": "Prepnúť na svetlý režim",
+      "themeDark": "Prepnúť na tmavý režim"
     }
   },
   "home": {

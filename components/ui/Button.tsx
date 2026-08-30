@@ -20,7 +20,7 @@ const variants = {
     "after:absolute after:inset-0 after:rounded-full after:bg-linear-135 after:from-brand-600 after:to-brand-500 " +
     "after:opacity-0 after:transition-opacity after:duration-300 hover:after:opacity-100",
   secondary:
-    "rounded-full border border-line-strong text-fg hover:border-brand-400/60 hover:bg-white/5",
+    "rounded-full border border-line-strong text-fg hover:border-brand-400/60 hover:bg-fg/5",
   link: "text-brand-400 hover:text-brand-300",
 } as const;
 

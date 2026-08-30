@@ -40,7 +40,7 @@ export default async function InsightsPage({
             <Reveal key={insight.slug} delay={i * 0.05}>
               <Link
                 href={`/insights/${insight.slug}`}
-                className="group grid gap-4 border-t border-line py-10 transition-colors hover:bg-white/[0.02] md:grid-cols-12 md:gap-8 md:py-12"
+                className="group grid gap-4 border-t border-line py-10 transition-colors hover:bg-fg/[0.03] md:grid-cols-12 md:gap-8 md:py-12"
               >
                 <div className="flex flex-row gap-4 font-mono text-[11px] uppercase tracking-[0.14em] text-fg-faint md:col-span-3 md:flex-col md:gap-2">
                   <span className="text-brand-400">{insight.category}</span>

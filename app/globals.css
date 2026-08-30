@@ -32,6 +32,50 @@
   --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ---------------------------------------------------------------------------
+   Light theme. Dark is the default (values in @theme above); everything below
+   re-points the same tokens, so components never branch on theme.
+   Boot script in app/[locale]/layout.tsx sets data-theme before first paint.
+--------------------------------------------------------------------------- */
+:root {
+  color-scheme: dark;
+  --aura-core: 55%;
+  --aura-mid: 22%;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  --color-ink-950: #edeef4; /* deep sections (footer, bands) */
+  --color-ink-900: #f8f8fb; /* page ground */
+  --color-ink-850: #ffffff; /* cards */
+  --color-ink-800: #ffffff; /* inputs, raised surfaces */
+  --color-ink-700: #e7e7f0;
+
+  --color-brand-300: #7c3aed;
+  --color-brand-400: #6d28d9;
+  --color-brand-500: #7c3aed;
+  --color-brand-600: #6d28d9;
+  --color-brand-700: #5b21b6;
+  --color-peri-400: #4f4fd8;
+  --color-mint-400: #059669;
+  --color-signal-300: #b45309;
+
+  --color-fg: #17171f;
+  --color-fg-muted: #4b4b58;
+  --color-fg-faint: #7c7c8a;
+  --color-line: color-mix(in srgb, #17171f 10%, transparent);
+  --color-line-strong: color-mix(in srgb, #17171f 18%, transparent);
+
+  /* violet glows read much stronger on white — soften them */
+  --aura-core: 14%;
+  --aura-mid: 6%;
+}
+
+[data-theme="light"] body::after {
+  opacity: 0.015;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -102,10 +146,21 @@
 @utility aura-brand {
   background: radial-gradient(
     ellipse 50% 50% at 50% 50%,
-    color-mix(in srgb, var(--color-brand-700) 55%, transparent) 0%,
-    color-mix(in srgb, var(--color-metal-500) 22%, transparent) 45%,
+    color-mix(in srgb, var(--color-brand-700) var(--aura-core, 55%), transparent) 0%,
+    color-mix(in srgb, var(--color-metal-500) var(--aura-mid, 22%), transparent) 45%,
     transparent 72%
   );
+}
+
+/* Theme-scoped asset swapping (e.g. logo variants) */
+.theme-light-only {
+  display: none;
+}
+[data-theme="light"] .theme-light-only {
+  display: block;
+}
+[data-theme="light"] .theme-dark-only {
+  display: none;
 }
 
 @utility text-outline-brand {
