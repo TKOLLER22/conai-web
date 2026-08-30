@@ -16,7 +16,10 @@ import "../globals.css";
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin", "latin-ext"],
   variable: "--font-bricolage",
-  display: "swap",
+  // block, not swap: headlines briefly render invisible instead of painting
+  // in the fallback font and visibly re-wrapping when Bricolage arrives
+  // (the font is preloaded, so the block window is ~100-300ms in practice).
+  display: "block",
 });
 
 const inter = Inter({
