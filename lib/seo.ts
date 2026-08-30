@@ -9,9 +9,8 @@ export const IS_PRODUCTION_DOMAIN = SITE_URL === PRODUCTION_URL;
 /**
  * Canonical for a path. Locale prefixes are never exposed in URLs
  * (localePrefix: "never" — the language is cookie-based), so there is one
- * canonical URL per page and no hreflang set. The `locale` parameter is kept
- * for call-site stability.
+ * canonical URL per page and no hreflang set.
  */
-export function seoAlternates(_locale: string, path: string) {
+export function seoCanonical(path: string) {
   return { canonical: path };
 }

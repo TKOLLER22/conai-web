@@ -17,7 +17,8 @@ export default function Logo({ priority = false }: { priority?: boolean }) {
         alt="ConAI"
         width={101}
         height={31}
-        priority={priority}
+        loading="lazy"
+        fetchPriority="low"
         className="theme-light-only"
       />
     </>

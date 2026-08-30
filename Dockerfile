@@ -12,10 +12,12 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
-# Canonical site origin, baked in at build time.
-# STAGING DEFAULT — change to https://conai.sk (or pass the build arg) at launch,
-# otherwise production ships staging canonicals and a noindex flag!
-ARG NEXT_PUBLIC_SITE_URL=https://conai.tomaskoller.sk
+# Canonical site origin baked in at build time. Defaults to PRODUCTION so a
+# forgotten build arg can never de-index conai.sk. Staging deploys may pass
+# their own URL for correct canonicals, but indexing protection does not
+# depend on it — non-production hosts get X-Robots-Tag + robots.txt disallow
+# at request time (see next.config.ts and app/robots.ts).
+ARG NEXT_PUBLIC_SITE_URL=https://conai.sk
 ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
 RUN npm run build
 
@@ -37,6 +39,6 @@ USER nextjs
 EXPOSE 3000
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s \
-  CMD wget -qO- http://127.0.0.1:3000/sk > /dev/null || exit 1
+  CMD wget -qO- http://127.0.0.1:3000/ > /dev/null || exit 1
 
 CMD ["node", "server.js"]

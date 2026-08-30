@@ -5,7 +5,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { formatInsightDate, getInsight, getInsights } from "@/lib/insights";
+import { findInsight, formatInsightDate, getInsights } from "@/lib/insights";
 import FinalCta from "@/components/ui/FinalCta";
 import JsonLd from "@/components/seo/JsonLd";
 import Reveal from "@/components/ui/Reveal";
@@ -17,27 +17,11 @@ export function generateStaticParams() {
   );
 }
 
-/**
- * Slugs are locale-specific; the visitor's cookie locale may not own the
- * requested slug. Fall back to whichever locale does, so every article URL
- * resolves for every visitor (and for crawlers).
- */
-function findInsight(locale: string, slug: string) {
-  const own = getInsight(locale, slug);
-  if (own) return { insight: own, locale };
-  for (const other of routing.locales) {
-    if (other === locale) continue;
-    const foreign = getInsight(other, slug);
-    if (foreign) return { insight: foreign, locale: other };
-  }
-  return null;
-}
-
 export async function generateMetadata({
   params,
 }: PageProps<"/[locale]/insights/[slug]">): Promise<Metadata> {
   const { locale, slug } = await params;
-  const found = findInsight(locale, slug);
+  const found = findInsight(routing.locales, locale, slug);
   if (!found) return {};
   return {
     title: `${found.insight.title} | ConAI`,
@@ -51,7 +35,7 @@ export default async function InsightPage({
 }: PageProps<"/[locale]/insights/[slug]">) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const found = findInsight(locale, slug);
+  const found = findInsight(routing.locales, locale, slug);
   if (!found) notFound();
   const { insight, locale: contentLocale } = found;
 

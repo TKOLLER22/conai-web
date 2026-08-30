@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Check } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { seoAlternates } from "@/lib/seo";
+import { seoCanonical } from "@/lib/seo";
 import Button from "@/components/ui/Button";
 import PageHeader from "@/components/ui/PageHeader";
 import Reveal from "@/components/ui/Reveal";
@@ -15,7 +15,7 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
-    alternates: seoAlternates(locale, "/careers"),
+    alternates: seoCanonical("/careers"),
   };
 }
 

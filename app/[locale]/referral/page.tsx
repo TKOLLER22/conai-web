@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { seoAlternates } from "@/lib/seo";
+import { seoCanonical } from "@/lib/seo";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import PageHeader from "@/components/ui/PageHeader";
@@ -15,7 +15,7 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
-    alternates: seoAlternates(locale, "/referral"),
+    alternates: seoCanonical("/referral"),
   };
 }
 

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import { seoAlternates } from "@/lib/seo";
+import { seoCanonical } from "@/lib/seo";
 import Hero from "@/components/home/Hero";
 import Stats from "@/components/home/Stats";
 import Ladder from "@/components/home/Ladder";
@@ -17,7 +17,7 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
-    alternates: seoAlternates(locale, "/"),
+    alternates: seoCanonical("/"),
   };
 }
 

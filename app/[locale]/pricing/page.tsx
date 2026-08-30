@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { seoAlternates } from "@/lib/seo";
+import { seoCanonical } from "@/lib/seo";
 import { Link } from "@/i18n/navigation";
 import Calculator from "@/components/roi/Calculator";
 import FinalCta from "@/components/ui/FinalCta";
@@ -18,7 +18,7 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
-    alternates: seoAlternates(locale, "/pricing"),
+    alternates: seoCanonical("/pricing"),
   };
 }
 

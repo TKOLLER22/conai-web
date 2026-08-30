@@ -64,7 +64,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color] duration-300 ${
         open
           ? // solid, unfiltered: backdrop-filter here would become the
             // containing block for the fixed menu overlay and clip it

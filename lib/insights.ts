@@ -59,6 +59,26 @@ export function getInsight(locale: string, slug: string): Insight | null {
   return getInsights(locale).find((insight) => insight.slug === slug) ?? null;
 }
 
+/**
+ * Slugs are locale-specific; the visitor's cookie locale may not own the
+ * requested slug. Fall back to whichever locale does, so every article URL
+ * resolves for every visitor (and for crawlers).
+ */
+export function findInsight(
+  locales: readonly string[],
+  locale: string,
+  slug: string,
+): { insight: Insight; locale: string } | null {
+  const own = getInsight(locale, slug);
+  if (own) return { insight: own, locale };
+  for (const other of locales) {
+    if (other === locale) continue;
+    const foreign = getInsight(other, slug);
+    if (foreign) return { insight: foreign, locale: other };
+  }
+  return null;
+}
+
 export function formatInsightDate(locale: string, date: string): string {
   return new Intl.DateTimeFormat(locale, {
     day: "numeric",

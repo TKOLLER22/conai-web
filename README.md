@@ -6,7 +6,7 @@ Marketing site for [conai.sk](https://conai.sk) — Next.js 16 (App Router), Tai
 
 ```bash
 npm install
-npm run dev        # http://localhost:3000 (redirects to /sk)
+npm run dev        # http://localhost:3000 (language via cookie/Accept-Language)
 npm test           # vitest: ROI math, insights frontmatter, SEO alternates
 npm run lint
 ```
@@ -28,7 +28,10 @@ docker build -t conai-web .
 docker run -p 3000:3000 conai-web
 ```
 
-In Coolify: new application → Git repository → build pack **Dockerfile** → port 3000 → attach domain. No environment variables required. For a staging deploy, set `NEXT_PUBLIC_SITE_URL` (build-time) so canonicals/sitemap don't point at conai.sk.
+In Coolify: new application → Git repository → build pack **Dockerfile** → port 3000 → attach domain.
+
+- **Production (conai.sk):** no configuration needed — the image defaults to `https://conai.sk`.
+- **Staging/preview domains:** indexing is blocked automatically at request time (`X-Robots-Tag` + `robots.txt` disallow for any non-production host) — no configuration needed for safety. Optionally set `NEXT_PUBLIC_SITE_URL` as a *build-time* variable so canonicals/sitemap show the staging host instead of conai.sk.
 
 ## SEO
 

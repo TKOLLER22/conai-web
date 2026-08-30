@@ -23,7 +23,14 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
 
     ScrollTrigger.refresh();
     const hash = window.location.hash;
-    const target = hash ? document.querySelector(hash) : null;
+    let target: Element | null = null;
+    if (hash) {
+      try {
+        target = document.querySelector(hash);
+      } catch {
+        // malformed hash (e.g. "#:") — treat as no target
+      }
+    }
     if (target) {
       smoother.scrollTo(target, false, "top 96px");
     } else {
