@@ -57,5 +57,6 @@ Hosted on the user's Coolify instance on a VPS. Ask the user for anything needed
 ## Roadmap (user-requested future features)
 
 - Light/dark mode switch (site is dark-only today; build tokens accordingly).
-- Better localization UX: no visible `/sk` / `/en` URL prefixes (cookie/negotiation-based, e.g. next-intl `localePrefix: 'never'`) — weigh SEO/hreflang tradeoffs before switching.
 - Revisit the color palette — the user is NOT fully sold on the current violet-on-dark; propose bolder alternatives while keeping ConAI brand recognition.
+
+Done from this list: prefix-less locale URLs (cookie/Accept-Language via next-intl `localePrefix: 'never'`, 2026-08-30). Deliberate tradeoff, user-approved: EN pages share URLs with SK so EN is not separately indexable (except insights articles, which keep locale-specific slugs and stay crawlable). If a CDN is ever added in front, HTML must vary on the NEXT_LOCALE cookie.

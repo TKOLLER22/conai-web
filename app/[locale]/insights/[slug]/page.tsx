@@ -17,16 +17,32 @@ export function generateStaticParams() {
   );
 }
 
+/**
+ * Slugs are locale-specific; the visitor's cookie locale may not own the
+ * requested slug. Fall back to whichever locale does, so every article URL
+ * resolves for every visitor (and for crawlers).
+ */
+function findInsight(locale: string, slug: string) {
+  const own = getInsight(locale, slug);
+  if (own) return { insight: own, locale };
+  for (const other of routing.locales) {
+    if (other === locale) continue;
+    const foreign = getInsight(other, slug);
+    if (foreign) return { insight: foreign, locale: other };
+  }
+  return null;
+}
+
 export async function generateMetadata({
   params,
 }: PageProps<"/[locale]/insights/[slug]">): Promise<Metadata> {
   const { locale, slug } = await params;
-  const insight = getInsight(locale, slug);
-  if (!insight) return {};
+  const found = findInsight(locale, slug);
+  if (!found) return {};
   return {
-    title: `${insight.title} | ConAI`,
-    description: insight.excerpt,
-    alternates: { canonical: `/${locale}/insights/${slug}` },
+    title: `${found.insight.title} | ConAI`,
+    description: found.insight.excerpt,
+    alternates: { canonical: `/insights/${slug}` },
   };
 }
 
@@ -35,8 +51,9 @@ export default async function InsightPage({
 }: PageProps<"/[locale]/insights/[slug]">) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const insight = getInsight(locale, slug);
-  if (!insight) notFound();
+  const found = findInsight(locale, slug);
+  if (!found) notFound();
+  const { insight, locale: contentLocale } = found;
 
   const t = await getTranslations("insights");
   const tHome = await getTranslations("home");
@@ -50,7 +67,7 @@ export default async function InsightPage({
           headline: insight.title,
           description: insight.excerpt,
           datePublished: insight.date,
-          inLanguage: locale,
+          inLanguage: contentLocale,
           author: { "@type": "Organization", name: "ConAI" },
         }}
       />
@@ -71,7 +88,7 @@ export default async function InsightPage({
             <div className="mt-10 flex flex-wrap gap-x-5 gap-y-2 font-mono text-[11px] uppercase tracking-[0.14em] text-fg-faint">
               <span className="text-brand-400">{insight.category}</span>
               <time dateTime={insight.date}>
-                {formatInsightDate(locale, insight.date)}
+                {formatInsightDate(contentLocale, insight.date)}
               </time>
               <span>{t("readTime", { min: insight.readMinutes })}</span>
             </div>
