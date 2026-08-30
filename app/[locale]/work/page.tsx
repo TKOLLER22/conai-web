@@ -20,8 +20,9 @@ export async function generateMetadata({
 
 type Project = { title: string; desc?: string; tags: string[] };
 
-// Wider slots for the projects that carry a description.
-const WIDE = new Set([1, 2, 4, 8]);
+// 11 cards tile the 6-col grid with no holes: four pair-rows and one
+// triple row — [2,4] [4,2] [2,2,2] [4,2] [2,4].
+const WIDE = new Set([1, 2, 7, 10]);
 
 export default async function WorkPage({ params }: PageProps<"/[locale]/work">) {
   const { locale } = await params;
