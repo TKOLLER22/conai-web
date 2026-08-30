@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import { SITE_URL } from "@/lib/seo";
+import { IS_PRODUCTION_DOMAIN, SITE_URL } from "@/lib/seo";
 import JsonLd from "@/components/seo/JsonLd";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -49,6 +49,7 @@ export async function generateMetadata({
       locale: locale === "sk" ? "sk_SK" : "en_US",
     },
     twitter: { card: "summary_large_image" },
+    ...(IS_PRODUCTION_DOMAIN ? {} : { robots: { index: false, follow: false } }),
   };
 }
 

@@ -1,6 +1,10 @@
+const PRODUCTION_URL = "https://conai.sk";
+
 /** Override per environment (e.g. a Coolify staging domain) at build time. */
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://conai.sk";
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || PRODUCTION_URL;
+
+/** Non-production domains must never be indexed alongside conai.sk. */
+export const IS_PRODUCTION_DOMAIN = SITE_URL === PRODUCTION_URL;
 
 /**
  * Canonical for a path. Locale prefixes are never exposed in URLs
