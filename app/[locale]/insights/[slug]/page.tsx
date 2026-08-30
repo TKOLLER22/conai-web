@@ -8,6 +8,7 @@ import { routing } from "@/i18n/routing";
 import { findInsight, formatInsightDate, getInsights } from "@/lib/insights";
 import FinalCta from "@/components/ui/FinalCta";
 import JsonLd from "@/components/seo/JsonLd";
+import { SITE_URL } from "@/lib/seo";
 import Reveal from "@/components/ui/Reveal";
 import { Container } from "@/components/ui/Section";
 
@@ -52,7 +53,10 @@ export default async function InsightPage({
           description: insight.excerpt,
           datePublished: insight.date,
           inLanguage: contentLocale,
-          author: { "@type": "Organization", name: "ConAI" },
+          image: `${SITE_URL}/opengraph-image`,
+          mainEntityOfPage: `${SITE_URL}/insights/${slug}`,
+          author: { "@id": `${SITE_URL}/#organization` },
+          publisher: { "@id": `${SITE_URL}/#organization` },
         }}
       />
       <article className="relative overflow-hidden pb-20 pt-36 md:pb-28 md:pt-44">

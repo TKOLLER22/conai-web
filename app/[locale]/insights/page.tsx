@@ -8,6 +8,8 @@ import FinalCta from "@/components/ui/FinalCta";
 import PageHeader from "@/components/ui/PageHeader";
 import Reveal from "@/components/ui/Reveal";
 import { Container } from "@/components/ui/Section";
+import JsonLd from "@/components/seo/JsonLd";
+import { SITE_URL } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -30,8 +32,21 @@ export default async function InsightsPage({
   const tHome = await getTranslations("home");
   const insights = getInsights(locale);
 
+  const listJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: t("title"),
+    itemListElement: insights.map((insight, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: insight.title,
+      url: `${SITE_URL}/insights/${insight.slug}`,
+    })),
+  };
+
   return (
     <main>
+      <JsonLd data={listJsonLd} />
       <PageHeader kicker={t("kicker")} title={t("title")} intro={t("intro")} />
 
       <Container className="pb-8">

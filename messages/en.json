@@ -211,7 +211,7 @@
     },
     "meta": {
       "title": "ConAI | AI implementation & engineering for SMEs",
-      "description": "AI implementation, engineering and consulting for small and mid-sized companies across Slovakia and Czechia. From a free audit to fully custom systems.",
+      "description": "AI implementation, engineering and consulting for small and mid-sized companies across Slovakia and Czechia. From a free 30-minute audit to fully custom AI systems.",
       "ogTagline": "AI implementation & engineering for SMEs"
     }
   },
@@ -222,8 +222,8 @@
   },
   "services": {
     "meta": {
-      "title": "Services for companies | ConAI",
-      "description": "From a free AI audit to local models and bespoke systems. Orientation packages for small and mid-sized companies."
+      "title": "AI implementation for companies — audit to custom AI | ConAI",
+      "description": "From a free AI audit through pilot automation to local models and bespoke systems. Orientation packages and pricing for small and mid-sized companies."
     },
     "kicker": "For companies",
     "title": "Start where it makes sense.",
@@ -377,8 +377,8 @@
   },
   "pricing": {
     "meta": {
-      "title": "Pricing | ConAI",
-      "description": "Indicative AI implementation pricing and an ROI calculator. You get an exact number after the free audit."
+      "title": "AI implementation pricing & ROI calculator | ConAI",
+      "description": "What AI implementation really costs: indicative pricing from ~€500 and an interactive ROI calculator. You get an exact number after the free 30-minute audit."
     },
     "kicker": "Pricing",
     "title": "What AI implementation really costs",
@@ -457,8 +457,8 @@
   },
   "work": {
     "meta": {
-      "title": "Projects | ConAI",
-      "description": "Interesting projects we've worked on — from local AI and RAG to fintech analytics and content automation."
+      "title": "Projects: local AI, RAG & automation in practice | ConAI",
+      "description": "Interesting projects we've worked on — local AI models, RAG engines, fintech analytics and content automation for companies and individuals alike."
     },
     "kicker": "Projects",
     "title": "Interesting projects we've worked on",
@@ -589,8 +589,8 @@
   },
   "bookAudit": {
     "meta": {
-      "title": "Book a free AI Audit | ConAI",
-      "description": "A free 30-minute AI audit. Pick a time that suits you."
+      "title": "Book a free 30-minute AI audit | ConAI",
+      "description": "Pick a time for your free 30-minute AI audit. No strings attached — we map your processes and judge together whether and where AI pays off for you."
     },
     "kicker": "Free AI Audit",
     "title": "Pick a time that suits you.",
@@ -600,8 +600,8 @@
   },
   "about": {
     "meta": {
-      "title": "About us | ConAI",
-      "description": "AI isn't a replacement for people — it's a tool. ConAI's story, mission and vision, plus answers to common questions."
+      "title": "About us: AI as a tool, not a replacement | ConAI",
+      "description": "AI isn't a replacement for people — it's a tool. Read ConAI's story, mission and vision, plus answers to the most common questions about deploying AI."
     },
     "kicker": "About us",
     "title": "AI isn't a replacement for people. It's a tool.",
@@ -657,8 +657,8 @@
   },
   "individuals": {
     "meta": {
-      "title": "For individuals | ConAI",
-      "description": "Solo founders, freelancers and people with an idea. Smaller one-off jobs, same standard."
+      "title": "AI, websites & dashboards for individuals | ConAI",
+      "description": "Solo founders, freelancers and people with an idea: internal dashboards, websites from €150, AI consultations and smaller one-off jobs — same standard of work."
     },
     "kicker": "For individuals",
     "title": "Not every business has departments.",
@@ -689,8 +689,8 @@
   },
   "insights": {
     "meta": {
-      "title": "Insights | ConAI",
-      "description": "Practical AI for business — strategy, engineering and lessons from real deployments."
+      "title": "Articles on practical AI for business | ConAI",
+      "description": "Practical AI for business without the marketing gloss: strategy, engineering and lessons from real AI deployments in small and mid-sized companies."
     },
     "kicker": "Insights",
     "title": "Practical AI for business",
@@ -700,8 +700,8 @@
   },
   "contact": {
     "meta": {
-      "title": "Contact | ConAI",
-      "description": "Have a question? Write to info@conai.sk or book a free AI audit right away."
+      "title": "Contact — write to us or book a free AI audit | ConAI",
+      "description": "Questions about AI implementation? Write to info@conai.sk, follow us on LinkedIn, or book a free 30-minute AI audit right away."
     },
     "kicker": "Contact",
     "title": "Have a question? We'll get back to you fast.",
@@ -712,8 +712,8 @@
   },
   "careers": {
     "meta": {
-      "title": "Careers | ConAI",
-      "description": "We're not actively hiring right now — but good people should always reach out."
+      "title": "Careers: AI, automation & engineering | ConAI",
+      "description": "We're not actively hiring right now — but we always reply to good people in AI, automation and engineering. Reach out even without a job ad."
     },
     "kicker": "Careers",
     "title": "We're not actively hiring right now.",
@@ -728,8 +728,8 @@
   },
   "referral": {
     "meta": {
-      "title": "Referrals | ConAI",
-      "description": "Know a company we could help? Refer us and earn 10 % of the first signed deal."
+      "title": "Referral program — 10% of the first deal | ConAI",
+      "description": "Know a company we could help with AI? Refer us and earn 10% of the first signed deal once it's paid. The program is launching soon."
     },
     "kicker": "Referrals",
     "badge": "Coming soon",
@@ -749,8 +749,8 @@
   },
   "advisor": {
     "meta": {
-      "title": "AI strategic advisor | ConAI",
-      "description": "An in-house AI consultant with your company's context — a strategic sparring partner available around the clock. In development."
+      "title": "AI strategic advisor for business owners | ConAI",
+      "description": "An in-house AI consultant with your company's context — a strategic sparring partner for owners, available around the clock. In development."
     },
     "kicker": "AI strategic advisor",
     "badge": "In development",

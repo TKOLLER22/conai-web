@@ -52,18 +52,35 @@ export async function generateMetadata({
       locale: locale === "sk" ? "sk_SK" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    ...(IS_PRODUCTION_DOMAIN ? {} : { robots: { index: false, follow: false } }),
+    robots: IS_PRODUCTION_DOMAIN
+      ? {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+          },
+        }
+      : { index: false, follow: false },
   };
 }
 
 const ORGANIZATION_JSONLD = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
   name: "ConAI",
   legalName: "ELYSIA, s. r. o.",
   url: SITE_URL,
   logo: `${SITE_URL}/brand/logo-232.png`,
   email: "info@conai.sk",
+  foundingDate: "2026",
+  areaServed: ["SK", "CZ"],
+  knowsLanguage: ["sk", "en"],
+  description:
+    "Implementácia AI, vývoj a poradenstvo pre malé a stredné firmy na Slovensku a v Česku.",
   sameAs: ["https://www.linkedin.com/company/conai-ai-solutions-for-smes"],
   address: {
     "@type": "PostalAddress",
@@ -72,6 +89,16 @@ const ORGANIZATION_JSONLD = {
     addressLocality: "Bratislava",
     addressCountry: "SK",
   },
+};
+
+const WEBSITE_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  name: "ConAI",
+  url: SITE_URL,
+  inLanguage: ["sk", "en"],
+  publisher: { "@id": `${SITE_URL}/#organization` },
 };
 
 export function generateStaticParams() {
@@ -103,6 +130,7 @@ export default async function LocaleLayout({
           }}
         />
         <JsonLd data={ORGANIZATION_JSONLD} />
+        <JsonLd data={WEBSITE_JSONLD} />
         <noscript>
           <style>{`[data-reveal],[data-hero-fade]{opacity:1 !important;transform:none !important}`}</style>
         </noscript>

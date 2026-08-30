@@ -7,6 +7,8 @@ import FinalCta from "@/components/ui/FinalCta";
 import PageHeader from "@/components/ui/PageHeader";
 import Reveal from "@/components/ui/Reveal";
 import { Container } from "@/components/ui/Section";
+import JsonLd from "@/components/seo/JsonLd";
+import { SITE_URL } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -125,8 +127,38 @@ export default async function ServicesPage({
     examplesTitle: t("examplesTitle"),
   };
 
+  const offer = (name: string, minPrice?: number) => ({
+    "@type": "Offer",
+    itemOffered: { "@type": "Service", name, provider: { "@id": `${SITE_URL}/#organization` } },
+    ...(minPrice
+      ? {
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            minPrice,
+            priceCurrency: "EUR",
+          },
+        }
+      : {}),
+  });
+
+  // Mirrors the tiers and indicative prices visible on this page.
+  const servicesJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    name: t("title"),
+    url: `${SITE_URL}/services`,
+    itemListElement: [
+      offer(tiers[0].title, 500),
+      offer(tiers[1].title, 2500),
+      offer(tiers[2].title, 8000),
+      offer(tiers[3].title),
+      offer(retainer.title, 300),
+    ],
+  };
+
   return (
     <main>
+      <JsonLd data={servicesJsonLd} />
       <PageHeader kicker={t("kicker")} title={t("title")} intro={t("intro")} />
 
       <Container>

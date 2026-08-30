@@ -20,13 +20,13 @@ const PATHS = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-
   // Locale prefixes are never exposed (cookie-based language) — one URL per
-  // page. Crawlers see the default locale (sk).
+  // page. Crawlers see the default locale (sk). Static pages carry no
+  // lastModified — stamping every deploy's build time on all of them would
+  // tell crawlers everything changed when nothing did; articles keep their
+  // real publication dates.
   const pages = PATHS.map((path) => ({
     url: `${SITE_URL}${path || "/"}`,
-    lastModified: now,
   }));
 
   // Article slugs are locale-specific, so both locales' articles keep

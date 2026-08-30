@@ -210,8 +210,8 @@
       "title": "Zistite, či je vaša firma pripravená na nasadenie AI."
     },
     "meta": {
-      "title": "ConAI | Implementácia AI a vývoj pre firmy",
-      "description": "Implementácia, vývoj a poradenstvo pre malé a stredné firmy na Slovensku a v Česku. Od bezplatného auditu až po systémy na mieru.",
+      "title": "ConAI | Implementácia AI a vývoj pre malé a stredné firmy",
+      "description": "Implementácia, vývoj a poradenstvo pre malé a stredné firmy na Slovensku a v Česku. Od bezplatného 30-minútového auditu až po AI systémy na mieru.",
       "ogTagline": "Implementácia AI a vývoj pre firmy"
     }
   },
@@ -222,8 +222,8 @@
   },
   "services": {
     "meta": {
-      "title": "Služby pre firmy | ConAI",
-      "description": "Od bezplatného AI auditu po lokálne modely a systémy na mieru. Orientačné balíčky pre malé a stredné firmy."
+      "title": "Implementácia AI pre firmy — od auditu po AI na mieru | ConAI",
+      "description": "Od bezplatného AI auditu cez pilotnú automatizáciu až po lokálne modely a systémy na mieru. Orientačné balíčky a ceny pre malé a stredné firmy."
     },
     "kicker": "Pre firmy",
     "title": "Začnite tam, kde to dáva zmysel.",
@@ -377,8 +377,8 @@
   },
   "pricing": {
     "meta": {
-      "title": "Cenník | ConAI",
-      "description": "Orientačné ceny implementácie AI a ROI kalkulačka. Presné číslo dostanete po bezplatnom audite."
+      "title": "Cenník implementácie AI a ROI kalkulačka | ConAI",
+      "description": "Koľko implementácia AI naozaj stojí: orientačné ceny od ~500 € a interaktívna ROI kalkulačka. Presné číslo dostanete po bezplatnom 30-minútovom audite."
     },
     "kicker": "Cenník",
     "title": "Koľko implementácia AI naozaj stojí",
@@ -457,8 +457,8 @@
   },
   "work": {
     "meta": {
-      "title": "Projekty | ConAI",
-      "description": "Zaujímavé projekty, na ktorých sme pracovali — od lokálnej AI a RAG po fintech analytiku a automatizáciu obsahu."
+      "title": "Projekty: lokálna AI, RAG a automatizácia v praxi | ConAI",
+      "description": "Zaujímavé projekty, na ktorých sme pracovali — lokálne AI modely, RAG enginy, fintech analytika a automatizácia obsahu pre firmy aj jednotlivcov."
     },
     "kicker": "Projekty",
     "title": "Zaujímavé projekty, na ktorých sme pracovali",
@@ -589,8 +589,8 @@
   },
   "bookAudit": {
     "meta": {
-      "title": "Rezervovať AI Audit zadarmo | ConAI",
-      "description": "30-minútový bezplatný AI audit. Vyberte si termín, ktorý vám vyhovuje."
+      "title": "Rezervovať bezplatný 30-minútový AI audit | ConAI",
+      "description": "Vyberte si termín bezplatného 30-minútového AI auditu. Bez záväzkov — zmapujeme vaše procesy a spoločne posúdime, či a kde sa vám AI oplatí."
     },
     "kicker": "AI Audit zadarmo",
     "title": "Vyberte si termín, ktorý vám vyhovuje.",
@@ -600,8 +600,8 @@
   },
   "about": {
     "meta": {
-      "title": "O nás | ConAI",
-      "description": "AI nie je náhrada za ľudí, ale nástroj. Príbeh, misia a vízia ConAI — a odpovede na časté otázky."
+      "title": "O nás: AI ako nástroj, nie náhrada ľudí | ConAI",
+      "description": "AI nie je náhrada za ľudí, ale nástroj. Prečítajte si príbeh, misiu a víziu ConAI — a odpovede na najčastejšie otázky o nasadzovaní AI vo firmách."
     },
     "kicker": "O nás",
     "title": "AI nie je náhrada za ľudí. Je to nástroj.",
@@ -657,8 +657,8 @@
   },
   "individuals": {
     "meta": {
-      "title": "Pre jednotlivcov | ConAI",
-      "description": "Sólo podnikatelia, freelanceri a ľudia s nápadom. Menšie jednorazové zákazky s rovnakým štandardom."
+      "title": "AI, weby a dashboardy pre jednotlivcov | ConAI",
+      "description": "Sólo podnikatelia, freelanceri a ľudia s nápadom: interné dashboardy, webstránky od 150 €, AI konzultácie a menšie jednorazové zákazky s rovnakým štandardom."
     },
     "kicker": "Pre jednotlivcov",
     "title": "Nie každá firma má oddelenia.",
@@ -689,8 +689,8 @@
   },
   "insights": {
     "meta": {
-      "title": "Články | ConAI",
-      "description": "Praktická AI pre firmy — stratégia, inžinierstvo a skúsenosti z nasadení."
+      "title": "Články o praktickej AI pre firmy | ConAI",
+      "description": "Praktická AI pre firmy bez marketingových fráz: stratégia, inžinierstvo a skúsenosti z reálnych nasadení AI v malých a stredných firmách."
     },
     "kicker": "Články",
     "title": "Praktická AI pre firmy",
@@ -700,8 +700,8 @@
   },
   "contact": {
     "meta": {
-      "title": "Kontakt | ConAI",
-      "description": "Máte otázku? Napíšte nám na info@conai.sk alebo si rovno rezervujte bezplatný AI audit."
+      "title": "Kontakt — napíšte nám alebo si rezervujte audit | ConAI",
+      "description": "Máte otázku k implementácii AI? Napíšte nám na info@conai.sk, sledujte nás na LinkedIn alebo si rovno rezervujte bezplatný 30-minútový AI audit."
     },
     "kicker": "Kontakt",
     "title": "Máte otázku? Ozveme sa čo najskôr.",
@@ -712,8 +712,8 @@
   },
   "careers": {
     "meta": {
-      "title": "Kariéra | ConAI",
-      "description": "Momentálne aktívne neobsadzujeme žiadne pozície — no dobrým ľuďom sa ozveme vždy."
+      "title": "Kariéra: AI, automatizácia a vývoj | ConAI",
+      "description": "Momentálne aktívne neobsadzujeme žiadne pozície — no dobrým ľuďom v AI, automatizácii a vývoji sa ozveme vždy. Napíšte nám aj bez inzerátu."
     },
     "kicker": "Kariéra",
     "title": "Momentálne aktívne neobsadzujeme žiadne pozície.",
@@ -728,8 +728,8 @@
   },
   "referral": {
     "meta": {
-      "title": "Odporúčania | ConAI",
-      "description": "Poznáte firmu, ktorej vieme pomôcť? Odporučte nás a získajte 10 % z prvej podpísanej zákazky."
+      "title": "Odporúčací program — 10 % z prvej zákazky | ConAI",
+      "description": "Poznáte firmu, ktorej vieme pomôcť s AI? Odporučte nás a po zaplatení prvej zákazky získate 10 % z jej hodnoty. Program spúšťame už čoskoro."
     },
     "kicker": "Odporúčania",
     "badge": "Už čoskoro",
@@ -749,8 +749,8 @@
   },
   "advisor": {
     "meta": {
-      "title": "AI strategický poradca | ConAI",
-      "description": "Interný AI konzultant s kontextom vašej firmy — strategický sparring partner dostupný nonstop. Práve vyvíjame."
+      "title": "AI strategický poradca pre majiteľov firiem | ConAI",
+      "description": "Interný AI konzultant s kontextom vašej firmy — strategický sparring partner pre majiteľov, dostupný nonstop. Súčasť dashboardu, práve vyvíjame."
     },
     "kicker": "AI strategický poradca",
     "badge": "Práve vyvíjame",
