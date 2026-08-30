@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import Kicker from "@/components/ui/Kicker";
 import Reveal from "@/components/ui/Reveal";
@@ -44,12 +45,7 @@ export default function WhyConai() {
                   <h3 className="text-display text-3xl md:text-4xl">
                     {row.title}
                   </h3>
-                  {i > 0 && (
-                    <span className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-signal-300/90">
-                      <span className="size-1.5 animate-pulse rounded-full bg-signal-300" />
-                      {t("badge")}
-                    </span>
-                  )}
+                  {i > 0 && <Badge>{t("badge")}</Badge>}
                 </div>
                 <p className="mt-6 max-w-[56ch] text-lg leading-relaxed text-fg-muted">
                   {row.body}

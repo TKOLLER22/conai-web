@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Plus } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { seoAlternates } from "@/lib/seo";
-import FinalCta from "@/components/home/FinalCta";
+import FinalCta from "@/components/ui/FinalCta";
 import JsonLd from "@/components/seo/JsonLd";
 import Kicker from "@/components/ui/Kicker";
 import PageHeader from "@/components/ui/PageHeader";
@@ -81,7 +81,7 @@ export default async function AboutPage({ params }: PageProps<"/[locale]/about">
                 <details key={item.q} className="group border-t border-line py-6 md:py-7">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-lg font-medium transition-colors hover:text-brand-300 md:text-xl">
                     {item.q}
-                    <Plus
+                    <Plus strokeWidth={1.5}
                       aria-hidden
                       className="size-5 shrink-0 text-fg-faint transition-transform duration-300 group-open:rotate-45"
                     />

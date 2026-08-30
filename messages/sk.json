@@ -13,8 +13,7 @@
       "careers": "Kariéra",
       "referral": "Odporúčania",
       "faq": "Časté otázky",
-      "privacy": "Ochrana osobných údajov",
-      "advisor": "AI poradca"
+      "privacy": "Ochrana osobných údajov"
     },
     "cta": {
       "audit": "AI Audit zadarmo",
@@ -27,6 +26,12 @@
       "sluzby": "Služby",
       "pomoc": "Pomoc",
       "legal": "ConAI je značkou spoločnosti ELYSIA, s. r. o."
+    },
+    "a11y": {
+      "mainNav": "Hlavná navigácia",
+      "mobileNav": "Mobilná navigácia",
+      "openMenu": "Otvoriť menu",
+      "closeMenu": "Zavrieť menu"
     }
   },
   "home": {
@@ -797,5 +802,10 @@
         "p": "Tieto zásady priebežne aktualizujeme spolu s novými funkciami stránky."
       }
     ]
+  },
+  "error": {
+    "title": "Niečo sa pokazilo.",
+    "description": "Nastala neočakávaná chyba. Skúste stránku načítať znova.",
+    "retry": "Skúsiť znova"
   }
 }

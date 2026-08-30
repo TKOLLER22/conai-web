@@ -49,7 +49,7 @@ export default async function ContactPage({
               className="mt-3 inline-flex items-center gap-2 text-xl text-fg-muted transition-colors hover:text-fg"
             >
               LinkedIn
-              <ArrowUpRight aria-hidden className="size-5" />
+              <ArrowUpRight strokeWidth={1.5} aria-hidden className="size-5" />
             </a>
             <p className="mt-12 font-mono text-xs uppercase tracking-[0.14em] text-fg-faint">
               {t("legal")}

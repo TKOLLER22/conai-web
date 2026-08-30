@@ -37,7 +37,7 @@ export default async function BookAuditPage({
           <ul className="mb-10 flex flex-wrap gap-x-7 gap-y-3 text-sm text-fg-muted">
             {[0, 1, 2].map((i) => (
               <li key={i} className="flex items-center gap-2">
-                <Check aria-hidden className="size-4 text-mint-400" />
+                <Check strokeWidth={1.5} aria-hidden className="size-4 text-mint-400" />
                 {tHome(`bullets.${i}`)}
               </li>
             ))}
@@ -58,7 +58,7 @@ export default async function BookAuditPage({
               className="inline-flex items-center gap-1 text-brand-400 transition-colors hover:text-brand-300"
             >
               cal.eu/conai/audit
-              <ArrowUpRight aria-hidden className="size-3.5" />
+              <ArrowUpRight strokeWidth={1.5} aria-hidden className="size-3.5" />
             </a>
           </p>
 

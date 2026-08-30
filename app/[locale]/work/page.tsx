@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { seoAlternates } from "@/lib/seo";
-import FinalCta from "@/components/home/FinalCta";
+import FinalCta from "@/components/ui/FinalCta";
 import PageHeader from "@/components/ui/PageHeader";
 import Reveal from "@/components/ui/Reveal";
 import { Container } from "@/components/ui/Section";

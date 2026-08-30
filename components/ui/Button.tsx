@@ -51,7 +51,7 @@ export default function Button({
     <>
       <span className="relative z-10">{children}</span>
       {arrow && (
-        <ArrowRight
+        <ArrowRight strokeWidth={1.5}
           aria-hidden
           className="relative z-10 size-4 transition-transform duration-300 group-hover:translate-x-1"
         />

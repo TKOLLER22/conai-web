@@ -13,8 +13,7 @@
       "careers": "Careers",
       "referral": "Referrals",
       "faq": "FAQ",
-      "privacy": "Privacy policy",
-      "advisor": "AI advisor"
+      "privacy": "Privacy policy"
     },
     "cta": {
       "audit": "Free AI Audit",
@@ -27,6 +26,12 @@
       "sluzby": "Services",
       "pomoc": "Support",
       "legal": "ConAI is a brand of ELYSIA, s. r. o."
+    },
+    "a11y": {
+      "mainNav": "Main navigation",
+      "mobileNav": "Mobile navigation",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu"
     }
   },
   "home": {
@@ -797,5 +802,10 @@
         "p": "We update this policy as the site gains new features."
       }
     ]
+  },
+  "error": {
+    "title": "Something went wrong.",
+    "description": "An unexpected error occurred. Try loading the page again.",
+    "retry": "Try again"
   }
 }

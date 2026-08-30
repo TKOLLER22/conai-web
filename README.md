@@ -7,6 +7,8 @@ Marketing site for [conai.sk](https://conai.sk) — Next.js 16 (App Router), Tai
 ```bash
 npm install
 npm run dev        # http://localhost:3000 (redirects to /sk)
+npm test           # vitest: ROI math, insights frontmatter, SEO alternates
+npm run lint
 ```
 
 Useful: append `?nomotion=1` to any URL to disable all entrance animations (visual testing, Lighthouse).
@@ -26,7 +28,7 @@ docker build -t conai-web .
 docker run -p 3000:3000 conai-web
 ```
 
-In Coolify: new application → Git repository → build pack **Dockerfile** → port 3000 → attach domain. No environment variables required.
+In Coolify: new application → Git repository → build pack **Dockerfile** → port 3000 → attach domain. No environment variables required. For a staging deploy, set `NEXT_PUBLIC_SITE_URL` (build-time) so canonicals/sitemap don't point at conai.sk.
 
 ## SEO
 

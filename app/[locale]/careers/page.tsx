@@ -37,7 +37,7 @@ export default async function CareersPage({
           <ul className="mt-6 flex max-w-xl flex-col gap-4">
             {include.map((item) => (
               <li key={item} className="flex items-start gap-3 text-lg">
-                <Check aria-hidden className="mt-1.5 size-4.5 shrink-0 text-mint-400" />
+                <Check strokeWidth={1.5} aria-hidden className="mt-1.5 size-4.5 shrink-0 text-mint-400" />
                 {item}
               </li>
             ))}

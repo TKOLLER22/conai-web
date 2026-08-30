@@ -32,7 +32,7 @@ export default function ProjectsTeaser() {
             >
               <div className="flex items-start justify-between gap-4">
                 <span className="kicker !text-fg-faint">{project.tag}</span>
-                <ArrowUpRight
+                <ArrowUpRight strokeWidth={1.5}
                   aria-hidden
                   className="size-5 shrink-0 text-fg-faint transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-brand-400"
                 />

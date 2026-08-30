@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import Button from "@/components/ui/Button";
 
 export default function NotFoundPage() {
   const t = useTranslations("notFound");
@@ -9,12 +9,9 @@ export default function NotFoundPage() {
       <p className="kicker">404</p>
       <h1 className="text-display text-4xl sm:text-5xl">{t("title")}</h1>
       <p className="max-w-md text-fg-muted">{t("description")}</p>
-      <Link
-        href="/"
-        className="mt-2 rounded-full bg-gradient-to-br from-brand-500 to-brand-400 px-6 py-3 text-sm font-medium text-white"
-      >
-        {t("cta")}
-      </Link>
+      <div className="mt-2">
+        <Button href="/">{t("cta")}</Button>
+      </div>
     </main>
   );
 }

@@ -5,8 +5,8 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { getInsight, getInsights } from "@/lib/insights";
-import FinalCta from "@/components/home/FinalCta";
+import { formatInsightDate, getInsight, getInsights } from "@/lib/insights";
+import FinalCta from "@/components/ui/FinalCta";
 import JsonLd from "@/components/seo/JsonLd";
 import Reveal from "@/components/ui/Reveal";
 import { Container } from "@/components/ui/Section";
@@ -40,11 +40,6 @@ export default async function InsightPage({
 
   const t = await getTranslations("insights");
   const tHome = await getTranslations("home");
-  const dateFormat = new Intl.DateTimeFormat(locale, {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
 
   return (
     <main>
@@ -70,13 +65,13 @@ export default async function InsightPage({
               href="/insights"
               className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-fg-faint transition-colors hover:text-fg"
             >
-              <ArrowLeft aria-hidden className="size-3.5" />
+              <ArrowLeft strokeWidth={1.5} aria-hidden className="size-3.5" />
               {t("back")}
             </Link>
             <div className="mt-10 flex flex-wrap gap-x-5 gap-y-2 font-mono text-[11px] uppercase tracking-[0.14em] text-fg-faint">
               <span className="text-brand-400">{insight.category}</span>
               <time dateTime={insight.date}>
-                {dateFormat.format(new Date(insight.date))}
+                {formatInsightDate(locale, insight.date)}
               </time>
               <span>{t("readTime", { min: insight.readMinutes })}</span>
             </div>

@@ -11,6 +11,8 @@ import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import "../globals.css";
 
+// Variable fonts measure better than pinned static weights here: one file
+// per subset beats 2× static instances (verified via Lighthouse, 2026-08-30).
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin", "latin-ext"],
   variable: "--font-bricolage",
@@ -91,7 +93,7 @@ export default async function LocaleLayout({
       <body>
         <JsonLd data={ORGANIZATION_JSONLD} />
         <noscript>
-          <style>{`[data-reveal]{opacity:1 !important;transform:none !important}`}</style>
+          <style>{`[data-reveal],[data-hero-fade]{opacity:1 !important;transform:none !important}`}</style>
         </noscript>
         <NextIntlClientProvider>
           <Header />

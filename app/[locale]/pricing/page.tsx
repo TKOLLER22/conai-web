@@ -4,7 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { seoAlternates } from "@/lib/seo";
 import { Link } from "@/i18n/navigation";
 import Calculator from "@/components/roi/Calculator";
-import FinalCta from "@/components/home/FinalCta";
+import FinalCta from "@/components/ui/FinalCta";
 import Kicker from "@/components/ui/Kicker";
 import PageHeader from "@/components/ui/PageHeader";
 import Reveal from "@/components/ui/Reveal";
@@ -55,7 +55,7 @@ export default async function PricingPage({
                   <span className="whitespace-nowrap font-mono text-sm text-brand-300 md:text-base">
                     {pkg.price}
                   </span>
-                  <ArrowRight
+                  <ArrowRight strokeWidth={1.5}
                     aria-hidden
                     className="size-5 text-fg-faint transition-all duration-300 group-hover:translate-x-1 group-hover:text-brand-400"
                   />

@@ -7,7 +7,7 @@ import Ladder from "@/components/home/Ladder";
 import WhyConai from "@/components/home/WhyConai";
 import ProjectsTeaser from "@/components/home/ProjectsTeaser";
 import Process from "@/components/home/Process";
-import FinalCta from "@/components/home/FinalCta";
+import FinalCta from "@/components/ui/FinalCta";
 
 export async function generateMetadata({
   params,

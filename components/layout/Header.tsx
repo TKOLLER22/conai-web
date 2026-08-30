@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
-import { Link, usePathname } from "@/i18n/navigation";
+import { useEffect, useState, useSyncExternalStore } from "react";
+import { Link } from "@/i18n/navigation";
 import Button from "@/components/ui/Button";
 import LocaleSwitcher from "./LocaleSwitcher";
 
@@ -24,21 +24,34 @@ const NAV = [
   { key: "insights", href: "/insights" },
 ] as const;
 
+// Mobile list = flattened desktop nav + contact (desktop reaches it via footer).
+const MOBILE_NAV: { key: string; href: string }[] = [];
+for (const item of NAV) {
+  if ("children" in item) {
+    for (const child of item.children) {
+      if (!child.href.includes("#")) MOBILE_NAV.push(child);
+    }
+  } else {
+    MOBILE_NAV.push(item);
+  }
+}
+MOBILE_NAV.push({ key: "contact", href: "/contact" });
+
+function subscribeToScroll(onChange: () => void) {
+  window.addEventListener("scroll", onChange, { passive: true });
+  return () => window.removeEventListener("scroll", onChange);
+}
+
 export default function Header() {
   const t = useTranslations("common");
-  const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const scrolled = useSyncExternalStore(
+    subscribeToScroll,
+    () => window.scrollY > 12,
+    () => false,
+  );
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  // Close the mobile menu on navigation, release the scroll lock.
-  useEffect(() => setOpen(false), [pathname]);
+  // Scroll lock while the mobile menu is open.
   useEffect(() => {
     document.documentElement.style.overflow = open ? "hidden" : "";
     return () => {
@@ -46,19 +59,18 @@ export default function Header() {
     };
   }, [open]);
 
-  const isActive = (href: string) =>
-    href !== "/" && pathname.startsWith(href.split("#")[0]);
+  const close = () => setOpen(false);
 
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300 ${
         scrolled || open
-          ? "border-b border-line bg-ink-900/85 backdrop-blur-xl"
+          ? "border-b border-line bg-ink-900/85 backdrop-blur-md"
           : "border-b border-transparent"
       }`}
     >
       <div className="mx-auto flex h-16 w-full max-w-[88rem] items-center justify-between px-6 sm:px-10 md:h-[76px]">
-        <Link href="/" aria-label="ConAI" className="relative z-10 shrink-0">
+        <Link href="/" aria-label="ConAI" className="relative z-10 shrink-0" onClick={close}>
           <Image
             src="/brand/logo-232.png"
             alt="ConAI"
@@ -69,26 +81,25 @@ export default function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav aria-label="Main" className="hidden md:block">
+        <nav aria-label={t("a11y.mainNav")} className="hidden md:block">
           <ul className="flex items-center gap-7 text-sm text-fg-muted">
             {NAV.map((item) =>
               "children" in item ? (
                 <li key={item.key} className="group relative">
                   <button
                     type="button"
-                    className={`flex items-center gap-1 py-2 transition-colors hover:text-fg ${
-                      isActive(item.href) ? "text-fg" : ""
-                    }`}
+                    className="flex items-center gap-1 py-2 transition-colors hover:text-fg"
                     aria-haspopup="true"
                   >
                     {t(`nav.${item.key}`)}
                     <ChevronDown
                       aria-hidden
+                      strokeWidth={1.5}
                       className="size-3.5 transition-transform duration-200 group-hover:rotate-180"
                     />
                   </button>
                   <div className="invisible absolute left-1/2 top-full -translate-x-1/2 pt-2 opacity-0 transition-all duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
-                    <ul className="min-w-48 rounded-2xl border border-line bg-ink-800/95 p-2 shadow-2xl shadow-black/40 backdrop-blur-xl">
+                    <ul className="min-w-48 rounded-2xl border border-line bg-ink-800/95 p-2 shadow-2xl shadow-black/40 backdrop-blur-md">
                       {item.children.map((child) => (
                         <li key={child.key}>
                           <Link
@@ -106,9 +117,7 @@ export default function Header() {
                 <li key={item.key}>
                   <Link
                     href={item.href}
-                    className={`py-2 transition-colors hover:text-fg ${
-                      isActive(item.href) ? "text-fg" : ""
-                    }`}
+                    className="py-2 transition-colors hover:text-fg"
                   >
                     {t(`nav.${item.key}`)}
                   </Link>
@@ -130,30 +139,26 @@ export default function Header() {
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
-          aria-label={open ? "Close menu" : "Open menu"}
+          aria-label={open ? t("a11y.closeMenu") : t("a11y.openMenu")}
           className="relative z-10 -mr-2 p-2 md:hidden"
         >
-          {open ? <X className="size-6" /> : <Menu className="size-6" />}
+          {open ? (
+            <X strokeWidth={1.5} className="size-6" />
+          ) : (
+            <Menu strokeWidth={1.5} className="size-6" />
+          )}
         </button>
       </div>
 
       {/* Mobile menu */}
       <div
-        className={`fixed inset-0 -z-10 flex flex-col bg-ink-950/98 px-6 pb-10 pt-24 backdrop-blur-2xl transition-opacity duration-300 md:hidden ${
+        className={`fixed inset-0 -z-10 flex flex-col bg-ink-950/98 px-6 pb-10 pt-24 backdrop-blur-xl transition-opacity duration-300 md:hidden ${
           open ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
-        <nav aria-label="Mobile" className="flex-1 overflow-y-auto">
+        <nav aria-label={t("a11y.mobileNav")} className="flex-1 overflow-y-auto">
           <ul className="flex flex-col gap-1">
-            {[
-              { key: "about", href: "/about" },
-              { key: "forCompanies", href: "/services" },
-              { key: "forIndividuals", href: "/individuals" },
-              { key: "work", href: "/work" },
-              { key: "pricing", href: "/pricing" },
-              { key: "insights", href: "/insights" },
-              { key: "contact", href: "/contact" },
-            ].map((item, i) => (
+            {MOBILE_NAV.map((item, i) => (
               <li
                 key={item.key}
                 style={{ transitionDelay: open ? `${80 + i * 40}ms` : "0ms" }}
@@ -163,6 +168,7 @@ export default function Header() {
               >
                 <Link
                   href={item.href}
+                  onClick={close}
                   className="block py-3 font-display text-3xl font-semibold tracking-tight"
                 >
                   {t(`nav.${item.key}`)}

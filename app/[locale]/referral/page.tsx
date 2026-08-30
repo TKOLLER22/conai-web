@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { seoAlternates } from "@/lib/seo";
+import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
-import Kicker from "@/components/ui/Kicker";
+import PageHeader from "@/components/ui/PageHeader";
 import Reveal from "@/components/ui/Reveal";
 import { Container } from "@/components/ui/Section";
 
@@ -28,29 +29,12 @@ export default async function ReferralPage({
 
   return (
     <main>
-      <header className="relative overflow-hidden pb-16 pt-36 md:pb-24 md:pt-48">
-        <div
-          aria-hidden
-          className="aura-brand absolute -top-[45vmin] right-[-20vmin] h-[90vmin] w-[90vmin] opacity-50"
-        />
-        <Container>
-          <Reveal>
-            <div className="flex flex-wrap items-center gap-5">
-              <Kicker>{t("kicker")}</Kicker>
-              <span className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-signal-300/90">
-                <span className="size-1.5 animate-pulse rounded-full bg-signal-300" />
-                {t("badge")}
-              </span>
-            </div>
-            <h1 className="text-display mt-6 max-w-4xl text-4xl sm:text-5xl md:text-7xl">
-              {t("title")}
-            </h1>
-            <p className="mt-8 max-w-[54ch] text-lg leading-relaxed text-fg-muted md:text-xl">
-              {t("intro")}
-            </p>
-          </Reveal>
-        </Container>
-      </header>
+      <PageHeader
+        kicker={t("kicker")}
+        title={t("title")}
+        intro={t("intro")}
+        badge={<Badge>{t("badge")}</Badge>}
+      />
 
       <Container className="pb-28 md:pb-40">
         <div className="grid gap-14 lg:grid-cols-2 lg:gap-8">

@@ -3,8 +3,8 @@ import { ArrowRight } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { seoAlternates } from "@/lib/seo";
 import { Link } from "@/i18n/navigation";
-import { getInsights } from "@/lib/insights";
-import FinalCta from "@/components/home/FinalCta";
+import { formatInsightDate, getInsights } from "@/lib/insights";
+import FinalCta from "@/components/ui/FinalCta";
 import PageHeader from "@/components/ui/PageHeader";
 import Reveal from "@/components/ui/Reveal";
 import { Container } from "@/components/ui/Section";
@@ -29,11 +29,6 @@ export default async function InsightsPage({
   const t = await getTranslations("insights");
   const tHome = await getTranslations("home");
   const insights = getInsights(locale);
-  const dateFormat = new Intl.DateTimeFormat(locale, {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
 
   return (
     <main>
@@ -50,7 +45,7 @@ export default async function InsightsPage({
                 <div className="flex flex-row gap-4 font-mono text-[11px] uppercase tracking-[0.14em] text-fg-faint md:col-span-3 md:flex-col md:gap-2">
                   <span className="text-brand-400">{insight.category}</span>
                   <time dateTime={insight.date}>
-                    {dateFormat.format(new Date(insight.date))}
+                    {formatInsightDate(locale, insight.date)}
                   </time>
                   <span>{t("readTime", { min: insight.readMinutes })}</span>
                 </div>
@@ -63,7 +58,7 @@ export default async function InsightsPage({
                   </p>
                 </div>
                 <div className="hidden items-start justify-end md:col-span-1 md:flex">
-                  <ArrowRight
+                  <ArrowRight strokeWidth={1.5}
                     aria-hidden
                     className="mt-2 size-5 text-fg-faint transition-all duration-300 group-hover:translate-x-1 group-hover:text-brand-400"
                   />

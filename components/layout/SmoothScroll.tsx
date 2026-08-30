@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef, type ReactNode } from "react";
-import { gsap, motionDisabled, ScrollSmoother, useGSAP, DESKTOP } from "@/lib/gsap";
+import { useEffect, useRef, type ReactNode } from "react";
+import { gsap, motionDisabled, ScrollSmoother, ScrollTrigger, useGSAP, DESKTOP } from "@/lib/gsap";
 
 /**
  * GSAP ScrollSmoother, desktop pointer devices only. Touch devices and
@@ -12,6 +12,12 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
+  // Web-font swap changes layout metrics after pinned sections have measured
+  // themselves (e.g. the ladder's scroll distance) — re-measure once fonts land.
+  useEffect(() => {
+    document.fonts?.ready.then(() => ScrollTrigger.refresh());
+  }, []);
+
   useGSAP(() => {
     const mm = gsap.matchMedia();
 
@@ -21,7 +27,6 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
         wrapper: wrapperRef.current!,
         content: contentRef.current!,
         smooth: 1,
-        effects: true,
         smoothTouch: false,
       });
 

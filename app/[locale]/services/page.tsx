@@ -3,7 +3,7 @@ import { Check } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { seoAlternates } from "@/lib/seo";
 import Button from "@/components/ui/Button";
-import FinalCta from "@/components/home/FinalCta";
+import FinalCta from "@/components/ui/FinalCta";
 import PageHeader from "@/components/ui/PageHeader";
 import Reveal from "@/components/ui/Reveal";
 import { Container } from "@/components/ui/Section";
@@ -66,7 +66,7 @@ function TierBlock({
           <ul className="mt-5 flex flex-col gap-4">
             {tier.includes.map((item) => (
               <li key={item} className="flex items-start gap-3 text-lg leading-relaxed">
-                <Check aria-hidden className="mt-1.5 size-4.5 shrink-0 text-mint-400" />
+                <Check strokeWidth={1.5} aria-hidden className="mt-1.5 size-4.5 shrink-0 text-mint-400" />
                 {item}
               </li>
             ))}
@@ -108,7 +108,6 @@ export default async function ServicesPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("services");
-  const tCommon = await getTranslations("common");
   const tiers = t.raw("tiers") as Tier[];
   const addon = t.raw("addon") as {
     label: string;
@@ -172,7 +171,7 @@ export default async function ServicesPage({
                   <ul className="mt-5 flex flex-col gap-2.5 text-fg-muted">
                     {addon.items.map((item) => (
                       <li key={item} className="flex items-start gap-3">
-                        <Check aria-hidden className="mt-1 size-4 shrink-0 text-mint-400" />
+                        <Check strokeWidth={1.5} aria-hidden className="mt-1 size-4 shrink-0 text-mint-400" />
                         {item}
                       </li>
                     ))}

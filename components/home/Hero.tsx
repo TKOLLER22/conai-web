@@ -3,52 +3,99 @@
 import dynamic from "next/dynamic";
 import { Check } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useEffect, useRef, useState } from "react";
+import { Component, useRef, useSyncExternalStore, type ReactNode } from "react";
 import Button from "@/components/ui/Button";
 import { gsap, motionDisabled, SplitText, useGSAP, DESKTOP } from "@/lib/gsap";
 
 const Hero3D = dynamic(() => import("./Hero3D"), { ssr: false });
 
+/**
+ * The 3D icon is decorative — a GLB fetch or WebGL failure must only drop
+ * the icon, never the page (r3f re-throws render errors into React).
+ */
+class Hero3DBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
+  state = { failed: false };
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+  render() {
+    return this.state.failed ? null : this.props.children;
+  }
+}
+
+let webglSupport: boolean | null = null;
+function hasWebGL() {
+  if (webglSupport === null) {
+    try {
+      const canvas = document.createElement("canvas");
+      webglSupport = !!(
+        canvas.getContext("webgl2") ?? canvas.getContext("webgl")
+      );
+    } catch {
+      webglSupport = false;
+    }
+  }
+  return webglSupport;
+}
+
+const SHOW_3D_QUERY =
+  "(min-width: 1024px) and (prefers-reduced-motion: no-preference)";
+
+function subscribeShow3D(onChange: () => void) {
+  const mql = window.matchMedia(SHOW_3D_QUERY);
+  mql.addEventListener("change", onChange);
+  return () => mql.removeEventListener("change", onChange);
+}
+
 export default function Hero() {
   const t = useTranslations("home.hero");
   const scope = useRef<HTMLElement>(null);
-  // The canvas wrapper is CSS-hidden below lg, but a display:none canvas
-  // would still download three.js and init WebGL — so gate the mount too.
-  const [show3D, setShow3D] = useState(false);
-  useEffect(() => {
-    if (window.matchMedia("(min-width: 1024px)").matches) setShow3D(true);
-  }, []);
+  // The canvas wrapper is CSS-hidden below lg, but a display:none canvas would
+  // still download three.js and init WebGL — gate the mount on viewport,
+  // reduced-motion preference and actual WebGL support.
+  const show3D = useSyncExternalStore(
+    subscribeShow3D,
+    () => window.matchMedia(SHOW_3D_QUERY).matches && hasWebGL(),
+    () => false,
+  );
 
   useGSAP(
     () => {
-      const mm = gsap.matchMedia();
+      // [data-hero-fade] elements start CSS-hidden (see globals.css) so the
+      // intro never flashes. Whenever the intro won't run — touch device,
+      // reduced motion, background tab, ?nomotion=1 — show them immediately.
+      const showAll = () => gsap.set("[data-hero-fade]", { autoAlpha: 1 });
 
-      mm.add(DESKTOP, () => {
-        // Loaded in a background tab (rAF frozen) or motion disabled:
-        // show the final state immediately instead of a stalled intro.
-        if (motionDisabled() || document.hidden) return;
+      if (
+        !window.matchMedia(DESKTOP).matches ||
+        motionDisabled() ||
+        document.hidden
+      ) {
+        showAll();
+        return;
+      }
 
-        const split = SplitText.create("[data-hero-title]", {
-          type: "lines",
-          mask: "lines",
-          autoSplit: true,
-        });
-
-        const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
-        tl.from(split.lines, {
-          yPercent: 115,
-          duration: 1.1,
-          stagger: 0.09,
-        })
-          .from(
-            "[data-hero-fade]",
-            { autoAlpha: 0, y: 20, duration: 0.8, stagger: 0.1 },
-            "-=0.55",
-          )
-          .then(() => split.revert());
+      const split = SplitText.create("[data-hero-title]", {
+        type: "lines",
+        mask: "lines",
+        autoSplit: true,
       });
 
-      return () => mm.revert();
+      const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
+      tl.from(split.lines, {
+        yPercent: 115,
+        duration: 1.1,
+        stagger: 0.09,
+      })
+        .to(
+          "[data-hero-fade]",
+          { autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.1 },
+          "-=0.55",
+        )
+        .then(() => split.revert());
+
+      // Fade targets start at opacity 0 via CSS; give them the slide offset.
+      gsap.set("[data-hero-fade]", { y: 20 });
     },
     { scope },
   );
@@ -92,7 +139,7 @@ export default function Hero() {
           >
             {[0, 1, 2].map((i) => (
               <li key={i} className="flex items-center gap-2">
-                <Check aria-hidden className="size-4 text-mint-400" />
+                <Check aria-hidden strokeWidth={1.5} className="size-4 text-mint-400" />
                 {t(`bullets.${i}`)}
               </li>
             ))}
@@ -101,7 +148,9 @@ export default function Hero() {
 
         <div className="relative hidden lg:block" data-hero-fade>
           {show3D && (
-            <Hero3D className="ml-auto aspect-square w-[min(46vw,850px)] lg:-mr-[5vw]" />
+            <Hero3DBoundary>
+              <Hero3D className="ml-auto aspect-square w-[min(46vw,850px)] lg:-mr-[5vw]" />
+            </Hero3DBoundary>
           )}
         </div>
       </div>

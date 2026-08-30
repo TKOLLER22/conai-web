@@ -13,6 +13,22 @@ export type Insight = {
 };
 
 const CONTENT_DIR = path.join(process.cwd(), "content", "insights");
+const REQUIRED_FIELDS = ["title", "date", "category", "excerpt"] as const;
+
+/** Runs at build time (SSG) — throw loudly instead of shipping broken pages. */
+function validateFrontmatter(
+  data: Record<string, unknown>,
+  file: string,
+): void {
+  for (const field of REQUIRED_FIELDS) {
+    if (typeof data[field] !== "string" || (data[field] as string).length === 0) {
+      throw new Error(`Insight "${file}" is missing frontmatter field "${field}"`);
+    }
+  }
+  if (Number.isNaN(new Date(data.date as string).getTime())) {
+    throw new Error(`Insight "${file}" has an unparseable date: "${data.date}"`);
+  }
+}
 
 export function getInsights(locale: string): Insight[] {
   const dir = path.join(CONTENT_DIR, locale);
@@ -25,19 +41,28 @@ export function getInsights(locale: string): Insight[] {
       const slug = file.replace(/\.mdx$/, "");
       const raw = fs.readFileSync(path.join(dir, file), "utf8");
       const { data, content } = matter(raw);
+      validateFrontmatter(data, `${locale}/${file}`);
       return {
         slug,
         title: data.title as string,
         date: data.date as string,
         category: data.category as string,
         excerpt: data.excerpt as string,
-        readMinutes: (data.readMinutes as number) ?? 1,
+        readMinutes: typeof data.readMinutes === "number" ? data.readMinutes : 1,
         content,
       };
     })
-    .sort((a, b) => (a.date < b.date ? 1 : -1));
+    .sort((a, b) => b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug));
 }
 
 export function getInsight(locale: string, slug: string): Insight | null {
   return getInsights(locale).find((insight) => insight.slug === slug) ?? null;
+}
+
+export function formatInsightDate(locale: string, date: string): string {
+  return new Intl.DateTimeFormat(locale, {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(new Date(date));
 }

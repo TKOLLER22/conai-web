@@ -2,6 +2,7 @@
 
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, Lightformer, useGLTF } from "@react-three/drei";
+import { ScrollSmoother } from "@/lib/gsap";
 import { useEffect, useRef, useState } from "react";
 import type { Group, Mesh, MeshStandardMaterial } from "three";
 
@@ -36,8 +37,11 @@ function Icon() {
     g.scale.setScalar(eased * BASE_SCALE);
 
     // Idle spin + gentle bob + pointer parallax (lerped) + scroll rotation.
+    // Read the smoothed position when ScrollSmoother is active so the icon
+    // reacts to the same signal that moves the visible layout.
     const { x, y } = state.pointer;
-    const scroll = window.scrollY / window.innerHeight;
+    const scrollY = ScrollSmoother.get()?.scrollTop() ?? window.scrollY;
+    const scroll = scrollY / window.innerHeight;
     g.rotation.y += delta * 0.22;
     g.rotation.x +=
       (BASE_TILT + y * -0.16 + scroll * 0.3 - g.rotation.x) * 0.04;
@@ -56,16 +60,25 @@ export default function Hero3D({ className = "" }: { className?: string }) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(true);
 
-  // Stop rendering entirely while the hero is offscreen.
+  // Stop rendering entirely while the hero is offscreen or the tab is hidden.
   useEffect(() => {
     const el = wrapRef.current;
     if (!el) return;
+    let intersecting = true;
+    const update = () => setVisible(intersecting && !document.hidden);
     const io = new IntersectionObserver(
-      ([entry]) => setVisible(entry.isIntersecting),
+      ([entry]) => {
+        intersecting = entry.isIntersecting;
+        update();
+      },
       { rootMargin: "80px" },
     );
     io.observe(el);
-    return () => io.disconnect();
+    document.addEventListener("visibilitychange", update);
+    return () => {
+      io.disconnect();
+      document.removeEventListener("visibilitychange", update);
+    };
   }, []);
 
   return (

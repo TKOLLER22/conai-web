@@ -1,5 +1,7 @@
 import { ImageResponse } from "next/og";
+import { hasLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
+import { routing } from "@/i18n/routing";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -10,7 +12,10 @@ export default async function OgImage({
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  const { locale: requested } = await params;
+  const locale = hasLocale(routing.locales, requested)
+    ? requested
+    : routing.defaultLocale;
   const t = await getTranslations({ locale, namespace: "home.meta" });
 
   return new ImageResponse(

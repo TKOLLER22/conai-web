@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Kicker from "@/components/ui/Kicker";
 import Reveal from "@/components/ui/Reveal";
 import { Container } from "@/components/ui/Section";
@@ -6,10 +7,12 @@ export default function PageHeader({
   kicker,
   title,
   intro,
+  badge,
 }: {
   kicker: string;
   title: string;
   intro?: string;
+  badge?: ReactNode;
 }) {
   return (
     <header className="relative overflow-hidden pb-16 pt-36 md:pb-24 md:pt-48">
@@ -19,7 +22,14 @@ export default function PageHeader({
       />
       <Container>
         <Reveal>
-          <Kicker>{kicker}</Kicker>
+          {badge ? (
+            <div className="flex flex-wrap items-center gap-5">
+              <Kicker>{kicker}</Kicker>
+              {badge}
+            </div>
+          ) : (
+            <Kicker>{kicker}</Kicker>
+          )}
           <h1 className="text-display mt-6 max-w-4xl text-4xl sm:text-5xl md:text-7xl">
             {title}
           </h1>
