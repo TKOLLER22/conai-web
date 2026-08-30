@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ConAI Website
 
-## Getting Started
+Marketing site for [conai.sk](https://conai.sk) — Next.js 16 (App Router), Tailwind v4, next-intl (sk/en), GSAP, react-three-fiber.
 
-First, run the development server:
+## Develop
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000 (redirects to /sk)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Useful: append `?nomotion=1` to any URL to disable all entrance animations (visual testing, Lighthouse).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Copy lives in `messages/sk.json` / `messages/en.json`, organized per page namespace.
+- Blog articles are MDX files in `content/insights/{sk,en}/<slug>.mdx` — slug = filename, frontmatter: `title`, `date`, `category`, `excerpt`, `readMinutes`. New article = new file + redeploy.
+- The hero 3D model is `public/models/conai-icon.glb` (optimized via gltf-transform from the Blender export).
 
-## Learn More
+## Build & deploy (Coolify)
 
-To learn more about Next.js, take a look at the following resources:
+Multi-stage `Dockerfile` (standalone output, node:22-alpine, port 3000, healthcheck on `/sk`).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+docker build -t conai-web .
+docker run -p 3000:3000 conai-web
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+In Coolify: new application → Git repository → build pack **Dockerfile** → port 3000 → attach domain. No environment variables required.
 
-## Deploy on Vercel
+## SEO
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `app/sitemap.ts` + `app/robots.ts` (canonical host: https://conai.sk)
+- Per-page localized metadata with hreflang alternates
+- JSON-LD: Organization (global), FAQPage (/about), Article (insights)
+- OG image generated per locale at `/{locale}/opengraph-image`

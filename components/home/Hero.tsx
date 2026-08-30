@@ -3,21 +3,27 @@
 import dynamic from "next/dynamic";
 import { Check } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Button from "@/components/ui/Button";
-import { gsap, motionDisabled, SplitText, useGSAP, MOTION_OK } from "@/lib/gsap";
+import { gsap, motionDisabled, SplitText, useGSAP, DESKTOP } from "@/lib/gsap";
 
 const Hero3D = dynamic(() => import("./Hero3D"), { ssr: false });
 
 export default function Hero() {
   const t = useTranslations("home.hero");
   const scope = useRef<HTMLElement>(null);
+  // The canvas wrapper is CSS-hidden below lg, but a display:none canvas
+  // would still download three.js and init WebGL — so gate the mount too.
+  const [show3D, setShow3D] = useState(false);
+  useEffect(() => {
+    if (window.matchMedia("(min-width: 1024px)").matches) setShow3D(true);
+  }, []);
 
   useGSAP(
     () => {
       const mm = gsap.matchMedia();
 
-      mm.add(MOTION_OK, () => {
+      mm.add(DESKTOP, () => {
         // Loaded in a background tab (rAF frozen) or motion disabled:
         // show the final state immediately instead of a stalled intro.
         if (motionDisabled() || document.hidden) return;
@@ -94,7 +100,9 @@ export default function Hero() {
         </div>
 
         <div className="relative hidden lg:block" data-hero-fade>
-          <Hero3D className="ml-auto aspect-square w-[min(46vw,850px)] lg:-mr-[5vw]" />
+          {show3D && (
+            <Hero3D className="ml-auto aspect-square w-[min(46vw,850px)] lg:-mr-[5vw]" />
+          )}
         </div>
       </div>
 

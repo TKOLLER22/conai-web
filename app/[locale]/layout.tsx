@@ -26,8 +26,9 @@ const inter = Inter({
 const jetbrains = JetBrains_Mono({
   subsets: ["latin", "latin-ext"],
   variable: "--font-jetbrains",
-  weight: ["400", "500"],
+  weight: ["400"],
   display: "swap",
+  preload: false,
 });
 
 export async function generateMetadata({
