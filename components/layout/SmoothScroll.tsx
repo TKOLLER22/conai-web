@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, type ReactNode } from "react";
+import { usePathname } from "@/i18n/navigation";
 import { gsap, motionDisabled, ScrollSmoother, ScrollTrigger, useGSAP, DESKTOP } from "@/lib/gsap";
 
 /**
@@ -11,6 +12,25 @@ import { gsap, motionDisabled, ScrollSmoother, ScrollTrigger, useGSAP, DESKTOP }
 export default function SmoothScroll({ children }: { children: ReactNode }) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+
+  // Next resets the native scroll position on route changes, but
+  // ScrollSmoother keeps its smoothed transform — without this, the next
+  // page renders still offset to wherever the previous page was scrolled.
+  useEffect(() => {
+    const smoother = ScrollSmoother.get();
+    if (!smoother) return; // native scrolling handles itself
+
+    ScrollTrigger.refresh();
+    const hash = window.location.hash;
+    const target = hash ? document.querySelector(hash) : null;
+    if (target) {
+      smoother.scrollTo(target, false, "top 96px");
+    } else {
+      smoother.scrollTo(0, false);
+      window.scrollTo(0, 0);
+    }
+  }, [pathname]);
 
   // Web-font swap changes layout metrics after pinned sections have measured
   // themselves (e.g. the ladder's scroll distance) — re-measure once fonts land.
