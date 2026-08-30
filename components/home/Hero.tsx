@@ -88,6 +88,12 @@ export default function Hero() {
           type: "lines",
           mask: "lines",
           autoSplit: true,
+          // The title uses non-breaking spaces to keep phrases together.
+          // reduceWhiteSpace (default true) collapses \u00A0 to plain spaces
+          // BEFORE splitting (SplitText source: text.replace(/\s+/g, " ")),
+          // which changes the wrap during the animation and snaps on revert.
+          reduceWhiteSpace: false,
+          wordDelimiter: " ",
           // The tween is created HERE (not outside) so autoSplit can rebuild
           // it with progress kept if lines change (font swap, resize).
           onSplit(self) {
