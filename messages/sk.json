@@ -585,5 +585,212 @@
     "intro": "30 minút, bez záväzkov. Všetko, čo si z hovoru odnesiete — postrehy, odporúčania aj nápady — ostáva vám. Prejdeme vaše procesy a spoločne posúdime, či u vás AI dáva zmysel.",
     "note": "Pred rezerváciou prosím do poznámky uveďte meno a priezvisko, telefón a názov firmy alebo web.",
     "fallback": "Kalendár sa nenačítal? Otvorte ho v novom okne"
+  },
+  "about": {
+    "meta": {
+      "title": "O nás | ConAI",
+      "description": "AI nie je náhrada za ľudí, ale nástroj. Príbeh, misia a vízia ConAI — a odpovede na časté otázky."
+    },
+    "kicker": "O nás",
+    "title": "AI nie je náhrada za ľudí. Je to nástroj.",
+    "blocks": [
+      {
+        "kicker": "Príbeh",
+        "text": "ConAI vzniklo v roku 2026 z jednoduchého presvedčenia: umelá inteligencia nie je náhradou za ľudí, ale nástrojom, ktorý im umožňuje pracovať efektívnejšie. Moderné AI riešenia chceme sprístupniť firmám tak, aby prinášali skutočnú hodnotu — šetrili čas a odstraňovali zbytočnú ručnú prácu."
+      },
+      {
+        "kicker": "Misia",
+        "text": "Našou misiou nie je meniť spôsob, akým funguje vaša firma. Chceme pochopiť vaše procesy a nájsť miesta, kde AI odstráni zbytočnú prácu. Rutina a administratíva idú strojom — kapacita na kreativitu, stratégiu a rozhodovanie ostáva ľuďom, kde sú nenahraditeľní."
+      },
+      {
+        "kicker": "Vízia",
+        "text": "Veríme, že firmy budú s externými AI špecialistami spolupracovať tak samozrejme, ako dnes spolupracujú s právnikmi, účtovníkmi či marketingovými agentúrami. Implementácia je len začiatok — skutočná hodnota vzniká dlhodobou optimalizáciou a sledovaním vývoja."
+      }
+    ],
+    "statement": "Budúcnosť nepatrí firmám, ktoré nahradia ľudí umelou inteligenciou. Patrí firmám, ktoré spoja schopnosti ľudí a technológií.",
+    "faq": {
+      "kicker": "Časté otázky",
+      "title": "Na čo sa nás pýtate najčastejšie",
+      "items": [
+        {
+          "q": "Nahradí AI mojich zamestnancov?",
+          "a": "Nie. AI vnímame ako nástroj, nie ako náhradu za ľudí. Preberá opakujúcu sa, časovo náročnú a administratívnu prácu, aby sa váš tím mohol venovať kreativite, stratégii, vzťahom a rozhodovaniu."
+        },
+        {
+          "q": "Sú dáta mojej firmy v bezpečí?",
+          "a": "Áno. Pri citlivej práci nasadzujeme modely lokálne na vašom hardvéri, takže vaše súbory nikdy neopustia budovu. Pri cloudových riešeniach používame súkromné spracovanie — vaše dáta sa nepoužívajú na tréning verejných modelov."
+        },
+        {
+          "q": "Potrebujem technické znalosti alebo IT oddelenie?",
+          "a": "Nie. Nastavenie, integráciu aj údržbu riešime my. Vy pracujete s jednoduchými rozhraniami a schvaľovaniami — stačí vám e-mail."
+        },
+        {
+          "q": "Ako rýchlo niečo spustíme?",
+          "a": "Pilotná automatizácia býva naživo v priebehu niekoľkých týždňov. Väčšie a lokálne riešenia trvajú dlhšie — presný harmonogram vznikne pri spoločnom pláne."
+        },
+        {
+          "q": "Ako sa určuje cena?",
+          "a": "Cena sa odvíja od rozsahu a zložitosti, nie od použitých nástrojov. Cenník ukazuje orientačné východiská; presné číslo dostanete po bezplatnom audite."
+        },
+        {
+          "q": "Budem musieť zmeniť spôsob fungovania firmy?",
+          "a": "Nie. Vychádzame z vašich existujúcich procesov a hľadáme miesta, kde AI odstráni ručnú prácu alebo zrýchli to, čo už robíte. Technológia sa prispôsobuje vašej firme, nie naopak."
+        },
+        {
+          "q": "Čo nasleduje po nasadení riešenia?",
+          "a": "Implementácia je len začiatok. Ostávame dlhodobým partnerom: systémy optimalizujeme, sledujeme vývoj a hľadáme ďalšie príležitosti."
+        }
+      ]
+    }
+  },
+  "individuals": {
+    "meta": {
+      "title": "Pre jednotlivcov | ConAI",
+      "description": "Sólo podnikatelia, freelanceri a ľudia s nápadom. Menšie jednorazové zákazky s rovnakým štandardom."
+    },
+    "kicker": "Pre jednotlivcov",
+    "title": "Nie každá firma má oddelenia.",
+    "intro": "Ak ste sólo podnikateľ, freelancer alebo len niekto s nápadom, berieme aj menšiu, jednorazovú prácu.",
+    "approachTitle": "Malá zákazka, rovnaký štandard",
+    "approachText": "Či ide o rozsiahly projekt alebo jednorazovú zákazku, vždy sa môžete spoľahnúť na rovnakú úroveň kvality, profesionálny prístup a precízne spracovanie.",
+    "offers": [
+      {
+        "title": "Interné dashboardy",
+        "desc": "Pre dáta, ktoré už máte v platformách, ktoré používate."
+      },
+      {
+        "title": "Základné webstránky a landing pages",
+        "desc": "Rýchle, čisté a funkčné.",
+        "price": "150 – 300 €"
+      },
+      {
+        "title": "Jednorazová AI navigácia",
+        "desc": "Konzultácia, počas ktorej vám ukážeme, ako môže AI pomôcť práve vášmu projektu a ktoré nástroje majú pre vás najväčší prínos."
+      },
+      {
+        "title": "Niečo iné?",
+        "desc": "Poďme na krátky, nezáväzný videohovor. Povedzte nám, čo potrebujete, my sa dopýtame na detaily a otvorene povieme, či a ako vieme pomôcť."
+      }
+    ],
+    "ctaTitle": "Máte na mysli niečo menšie?",
+    "ctaDesc": "Poďme sa o tom porozprávať."
+  },
+  "insights": {
+    "meta": {
+      "title": "Články | ConAI",
+      "description": "Praktická AI pre firmy — stratégia, inžinierstvo a skúsenosti z nasadení."
+    },
+    "kicker": "Články",
+    "title": "Praktická AI pre firmy",
+    "intro": "Ďalšie články pribúdajú pomaly, ale isto.",
+    "readTime": "{min} min čítania",
+    "back": "Všetky články"
+  },
+  "contact": {
+    "meta": {
+      "title": "Kontakt | ConAI",
+      "description": "Máte otázku? Napíšte nám na info@conai.sk alebo si rovno rezervujte bezplatný AI audit."
+    },
+    "kicker": "Kontakt",
+    "title": "Máte otázku? Ozveme sa čo najskôr.",
+    "writeUs": "Napíšte nám",
+    "followUs": "Sledujte nás",
+    "orBook": "Alebo rovno k veci",
+    "legal": "ConAI je značkou spoločnosti ELYSIA, s. r. o."
+  },
+  "careers": {
+    "meta": {
+      "title": "Kariéra | ConAI",
+      "description": "Momentálne aktívne neobsadzujeme žiadne pozície — no dobrým ľuďom sa ozveme vždy."
+    },
+    "kicker": "Kariéra",
+    "title": "Momentálne aktívne neobsadzujeme žiadne pozície.",
+    "intro": "Ak si ale myslíte, že by ste nám vedeli pomôcť — najmä v AI, automatizácii alebo vývoji — pokojne sa ozvite aj bez inzerátu. Každú správu si prečítame a ak sa v budúcnosti niečo otvorí, ozveme sa.",
+    "includeTitle": "Čo do správy napíšte",
+    "include": [
+      "Pár viet o sebe",
+      "V akej ste situácii a čo hľadáte",
+      "CV alebo odkazy na LinkedIn / GitHub, ak máte"
+    ],
+    "cta": "Napísať na info@conai.sk"
+  },
+  "referral": {
+    "meta": {
+      "title": "Odporúčania | ConAI",
+      "description": "Poznáte firmu, ktorej vieme pomôcť? Odporučte nás a získajte 10 % z prvej podpísanej zákazky."
+    },
+    "kicker": "Odporúčania",
+    "badge": "Už čoskoro",
+    "title": "Poznáte firmu, ktorej vieme pomôcť?",
+    "intro": "Odporučte nás a po zaplatení prvej zákazky vám vyplatíme odmenu.",
+    "reward": "10 %",
+    "rewardDesc": "z celej prvej podpísanej zákazky — bez ohľadu na to, ktoré služby obsahuje.",
+    "rulesTitle": "Predbežné pravidlá",
+    "rules": [
+      "Odporúčanie musí byť zaregistrované skôr, než firmu oslovíme my",
+      "Odmena sa vypláca po prijatí platby od odporúčaného klienta, nie po podpise",
+      "Firma má 60 dní na podpis zmluvy, potom nárok zaniká",
+      "Odporúčať nemôžu majitelia, zamestnanci ani spriaznené osoby odporúčanej firmy"
+    ],
+    "note": "Kompletné podmienky zverejníme pri spustení programu. Aktuálne pravidlá sú predbežné.",
+    "cta": "Ozvite sa nám vopred"
+  },
+  "advisor": {
+    "meta": {
+      "title": "AI strategický poradca | ConAI",
+      "description": "Interný AI konzultant s kontextom vašej firmy — strategický sparring partner dostupný nonstop. Práve vyvíjame."
+    },
+    "kicker": "AI strategický poradca",
+    "badge": "Práve vyvíjame",
+    "title": "Strategický sparring partner, ktorý pozná vašu firmu.",
+    "intro": "Interný AI konzultant v partnerskom dashboarde ConAI. Pracuje s kontextom vašej firmy — spýtajte sa ho čokoľvek o vašom podnikaní a dostanete strategické nasmerovanie.",
+    "features": [
+      {
+        "title": "Kontext vašej firmy",
+        "desc": "Pozná vaše procesy, čísla a ciele — neodpovedá zo vzduchu."
+      },
+      {
+        "title": "K dispozícii nonstop",
+        "desc": "Sparring partner pre majiteľov, nie konzultant raz za kvartál."
+      },
+      {
+        "title": "Súčasť dashboardu",
+        "desc": "Chatbot, sociálne siete a dokumenty na jednom mieste, pod vašou kontrolou."
+      }
+    ],
+    "note": "Dashboard aktívne vyvíjame. Partneri-klienti k nemu dostanú prístup medzi prvými.",
+    "ctaTitle": "Chcete byť medzi prvými?",
+    "ctaDesc": "Povedzte nám to na bezplatnom audite."
+  },
+  "privacy": {
+    "meta": {
+      "title": "Ochrana osobných údajov | ConAI",
+      "description": "Ako ConAI (ELYSIA, s. r. o.) spracúva osobné údaje."
+    },
+    "kicker": "Právne",
+    "title": "Ochrana osobných údajov",
+    "updated": "Posledná aktualizácia: 3. júl 2026",
+    "sections": [
+      {
+        "h": "Správca údajov",
+        "p": "ELYSIA, s. r. o., Tranovského 36, 841 02 Bratislava – mestská časť Dúbravka. IČO: 45 457 450, DIČ: 2023005237, IČ DPH: SK2023005237. Zapísaná v Obchodnom registri Mestského súdu Bratislava III, oddiel Sro, vložka č. 63910/B. ConAI je značkou tejto spoločnosti. Kontakt: info@conai.sk."
+      },
+      {
+        "h": "Pasívne prehliadanie",
+        "p": "Pri bežnom prehliadaní stránky nepoužívame analytické nástroje, reklamné systémy ani sledovacie cookies. Údaje spracúvame iba v rozsahu potrebnom na bezpečnú prevádzku webu."
+      },
+      {
+        "h": "Rezervácia auditu",
+        "p": "Rezerváciu termínu zabezpečuje služba Cal.com (EU inštancia cal.eu). Údaje potrebné na rezerváciu spracúva táto služba podľa svojich vlastných zásad ochrany osobných údajov."
+      },
+      {
+        "h": "Vaše práva",
+        "p": "Máte právo na prístup k svojim údajom, ich opravu alebo vymazanie. Stačí nás kontaktovať e-mailom na info@conai.sk."
+      },
+      {
+        "h": "Zmeny",
+        "p": "Tieto zásady priebežne aktualizujeme spolu s novými funkciami stránky."
+      }
+    ]
   }
 }

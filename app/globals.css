@@ -227,3 +227,34 @@ body::after {
   color: var(--color-brand-300);
   background: color-mix(in srgb, var(--color-brand-500) 12%, transparent);
 }
+
+/* Insight article body */
+.prose-insight {
+  max-width: 65ch;
+}
+.prose-insight p {
+  margin-block: 1.5rem;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-fg-muted);
+}
+.prose-insight a {
+  color: var(--color-brand-400);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s;
+}
+.prose-insight a:hover {
+  color: var(--color-brand-300);
+}
+.prose-insight h2 {
+  margin-top: 3rem;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-fg);
+}
+.prose-insight strong {
+  color: var(--color-fg);
+}

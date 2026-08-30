@@ -585,5 +585,212 @@
     "intro": "30 minutes, no strings attached. Everything you take away from the call — insights, recommendations, ideas — is yours to keep. We'll walk through your processes and judge together whether AI makes sense for you.",
     "note": "Before booking, please add your full name, phone number and company name or website to the notes field.",
     "fallback": "Calendar didn't load? Open it in a new window"
+  },
+  "about": {
+    "meta": {
+      "title": "About us | ConAI",
+      "description": "AI isn't a replacement for people — it's a tool. ConAI's story, mission and vision, plus answers to common questions."
+    },
+    "kicker": "About us",
+    "title": "AI isn't a replacement for people. It's a tool.",
+    "blocks": [
+      {
+        "kicker": "Story",
+        "text": "ConAI was founded in 2026 on a simple conviction: artificial intelligence isn't a replacement for people but a tool that lets them work more efficiently. We want to make modern AI genuinely useful to companies — saving time and removing pointless manual work."
+      },
+      {
+        "kicker": "Mission",
+        "text": "Our mission isn't to change how your company works. We want to understand your processes and find the places where AI removes unnecessary work. Routine and admin go to the machines — capacity for creativity, strategy and decision-making stays with people, where they're irreplaceable."
+      },
+      {
+        "kicker": "Vision",
+        "text": "We believe companies will work with external AI specialists as naturally as they work with lawyers, accountants or marketing agencies today. Implementation is just the beginning — the real value comes from long-term optimization and staying on top of what's new."
+      }
+    ],
+    "statement": "The future doesn't belong to companies that replace people with AI. It belongs to companies that combine what people and technology do best.",
+    "faq": {
+      "kicker": "FAQ",
+      "title": "What we get asked most",
+      "items": [
+        {
+          "q": "Will AI replace my employees?",
+          "a": "No. We see AI as a tool, not a replacement for people. It takes over repetitive, time-consuming and administrative work so your team can focus on creativity, strategy, relationships and decisions."
+        },
+        {
+          "q": "Is my company's data safe?",
+          "a": "Yes. For sensitive work we deploy models locally on your hardware, so your files never leave the building. For cloud solutions we use private processing — your data is never used to train public models."
+        },
+        {
+          "q": "Do I need technical skills or an IT department?",
+          "a": "No. We handle setup, integration and maintenance. You work with simple interfaces and approvals — email-level skills are enough."
+        },
+        {
+          "q": "How fast can we launch something?",
+          "a": "A pilot automation is typically live within a few weeks. Larger and local deployments take longer — the exact timeline comes out of the joint plan."
+        },
+        {
+          "q": "How is the price determined?",
+          "a": "Price follows scope and complexity, not the tools used. The pricing page shows indicative starting points; you get an exact number after the free audit."
+        },
+        {
+          "q": "Will I have to change how my company operates?",
+          "a": "No. We start from your existing processes and look for places where AI removes manual work or speeds up what you already do. The technology adapts to your company, not the other way around."
+        },
+        {
+          "q": "What happens after the solution is deployed?",
+          "a": "Implementation is just the start. We stay on as a long-term partner: optimizing systems, watching developments and spotting new opportunities."
+        }
+      ]
+    }
+  },
+  "individuals": {
+    "meta": {
+      "title": "For individuals | ConAI",
+      "description": "Solo founders, freelancers and people with an idea. Smaller one-off jobs, same standard."
+    },
+    "kicker": "For individuals",
+    "title": "Not every business has departments.",
+    "intro": "If you're a solo founder, a freelancer or just someone with an idea, we take on smaller one-off work too.",
+    "approachTitle": "Small job, same standard",
+    "approachText": "Whether it's a large project or a one-off job, you can always count on the same level of quality, a professional approach and precise delivery.",
+    "offers": [
+      {
+        "title": "Internal dashboards",
+        "desc": "For the data you already have, in the platforms you already use."
+      },
+      {
+        "title": "Basic websites and landing pages",
+        "desc": "Fast, clean and functional.",
+        "price": "€150 – €300"
+      },
+      {
+        "title": "One-off AI navigation",
+        "desc": "A consultation where we show you how AI can help your specific project and which tools bring you the most value."
+      },
+      {
+        "title": "Something else?",
+        "desc": "Let's have a short, no-strings video call. Tell us what you need, we'll ask the right questions and tell you openly whether and how we can help."
+      }
+    ],
+    "ctaTitle": "Have something smaller in mind?",
+    "ctaDesc": "Let's talk it through."
+  },
+  "insights": {
+    "meta": {
+      "title": "Insights | ConAI",
+      "description": "Practical AI for business — strategy, engineering and lessons from real deployments."
+    },
+    "kicker": "Insights",
+    "title": "Practical AI for business",
+    "intro": "New articles land slowly but surely.",
+    "readTime": "{min} min read",
+    "back": "All articles"
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact | ConAI",
+      "description": "Have a question? Write to info@conai.sk or book a free AI audit right away."
+    },
+    "kicker": "Contact",
+    "title": "Have a question? We'll get back to you fast.",
+    "writeUs": "Write to us",
+    "followUs": "Follow us",
+    "orBook": "Or cut to the chase",
+    "legal": "ConAI is a brand of ELYSIA, s. r. o."
+  },
+  "careers": {
+    "meta": {
+      "title": "Careers | ConAI",
+      "description": "We're not actively hiring right now — but good people should always reach out."
+    },
+    "kicker": "Careers",
+    "title": "We're not actively hiring right now.",
+    "intro": "But if you think you could help us — especially in AI, automation or engineering — reach out even without a job ad. We read every message, and if something opens up later, we'll get in touch.",
+    "includeTitle": "What to include",
+    "include": [
+      "A few sentences about yourself",
+      "Your situation and what you're looking for",
+      "A CV or LinkedIn / GitHub links, if you have them"
+    ],
+    "cta": "Write to info@conai.sk"
+  },
+  "referral": {
+    "meta": {
+      "title": "Referrals | ConAI",
+      "description": "Know a company we could help? Refer us and earn 10 % of the first signed deal."
+    },
+    "kicker": "Referrals",
+    "badge": "Coming soon",
+    "title": "Know a company we could help?",
+    "intro": "Refer us, and once the first deal is paid, you get a reward.",
+    "reward": "10 %",
+    "rewardDesc": "of the entire first signed deal — regardless of which services it includes.",
+    "rulesTitle": "Preliminary rules",
+    "rules": [
+      "The referral must be registered before we contact the company ourselves",
+      "The reward is paid when the referred client pays, not at signing",
+      "The company has 60 days to sign; after that the claim expires",
+      "Owners, employees and related parties of the referred company can't refer it"
+    ],
+    "note": "Full terms will be published at launch. The current rules are preliminary.",
+    "cta": "Get in touch early"
+  },
+  "advisor": {
+    "meta": {
+      "title": "AI strategic advisor | ConAI",
+      "description": "An in-house AI consultant with your company's context — a strategic sparring partner available around the clock. In development."
+    },
+    "kicker": "AI strategic advisor",
+    "badge": "In development",
+    "title": "A strategic sparring partner that knows your company.",
+    "intro": "An internal AI consultant inside the ConAI partner dashboard. It works with your company's context — ask it anything about your business and get strategic direction.",
+    "features": [
+      {
+        "title": "Your company's context",
+        "desc": "It knows your processes, numbers and goals — no answers from thin air."
+      },
+      {
+        "title": "Available around the clock",
+        "desc": "A sparring partner for owners, not a once-a-quarter consultant."
+      },
+      {
+        "title": "Part of the dashboard",
+        "desc": "Chatbot, social media and documents in one place, under your control."
+      }
+    ],
+    "note": "The dashboard is in active development. Partner clients get access first.",
+    "ctaTitle": "Want to be among the first?",
+    "ctaDesc": "Tell us on the free audit."
+  },
+  "privacy": {
+    "meta": {
+      "title": "Privacy policy | ConAI",
+      "description": "How ConAI (ELYSIA, s. r. o.) processes personal data."
+    },
+    "kicker": "Legal",
+    "title": "Privacy policy",
+    "updated": "Last updated: 3 July 2026",
+    "sections": [
+      {
+        "h": "Data controller",
+        "p": "ELYSIA, s. r. o., Tranovského 36, 841 02 Bratislava – Dúbravka, Slovakia. Company ID: 45 457 450, Tax ID: 2023005237, VAT: SK2023005237. Registered in the Commercial Register of the Bratislava III Municipal Court, section Sro, file 63910/B. ConAI is a brand of this company. Contact: info@conai.sk."
+      },
+      {
+        "h": "Passive browsing",
+        "p": "During normal browsing we use no analytics tools, ad systems or tracking cookies. We process data only to the extent needed to run the site securely."
+      },
+      {
+        "h": "Audit booking",
+        "p": "Bookings are handled by Cal.com (EU instance cal.eu). The data needed for a booking is processed by that service under its own privacy policy."
+      },
+      {
+        "h": "Your rights",
+        "p": "You have the right to access, correct or delete your data. Just contact us by email at info@conai.sk."
+      },
+      {
+        "h": "Changes",
+        "p": "We update this policy as the site gains new features."
+      }
+    ]
   }
 }
