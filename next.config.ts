@@ -25,6 +25,7 @@ const nextConfig: NextConfig = {
         missing: [
           { type: "host", value: "conai.sk" },
           { type: "host", value: "www.conai.sk" },
+          { type: "host", value: "conai.tomaskoller.sk" },
           { type: "host", value: "localhost" },
           { type: "host", value: "127.0.0.1" },
         ],

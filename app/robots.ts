@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { headers } from "next/headers";
 import { SITE_URL } from "@/lib/seo";
 
-const PRODUCTION_HOSTS = new Set(["conai.sk", "www.conai.sk"]);
+const PRODUCTION_HOSTS = new Set(["conai.sk", "www.conai.sk", "conai.tomaskoller.sk"]);
 
 // Dynamic on purpose: indexing permission is decided by the requesting host,
 // not by build configuration, so staging/preview domains can never be indexed

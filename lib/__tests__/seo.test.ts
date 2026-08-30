@@ -29,26 +29,26 @@ describe("SITE_URL / IS_PRODUCTION_DOMAIN env matrix", () => {
     return import("../seo");
   }
 
-  it("unset → production URL, production domain", async () => {
+  it("unset → current live domain, indexable", async () => {
     const seo = await loadSeo(undefined);
-    expect(seo.SITE_URL).toBe("https://conai.sk");
+    expect(seo.SITE_URL).toBe("https://conai.tomaskoller.sk");
     expect(seo.IS_PRODUCTION_DOMAIN).toBe(true);
   });
 
-  it("empty string (unset Docker ARG) → falls back to production", async () => {
+  it("empty string (unset Docker ARG) → falls back to live domain", async () => {
     const seo = await loadSeo("");
-    expect(seo.SITE_URL).toBe("https://conai.sk");
+    expect(seo.SITE_URL).toBe("https://conai.tomaskoller.sk");
     expect(seo.IS_PRODUCTION_DOMAIN).toBe(true);
   });
 
-  it("explicit production URL → production domain", async () => {
+  it("conai.sk (future launch) → indexable", async () => {
     const seo = await loadSeo("https://conai.sk");
     expect(seo.IS_PRODUCTION_DOMAIN).toBe(true);
   });
 
-  it("staging URL → NOT production domain", async () => {
-    const seo = await loadSeo("https://conai.tomaskoller.sk");
-    expect(seo.SITE_URL).toBe("https://conai.tomaskoller.sk");
+  it("unknown preview host → NOT indexable", async () => {
+    const seo = await loadSeo("https://preview.example.com");
+    expect(seo.SITE_URL).toBe("https://preview.example.com");
     expect(seo.IS_PRODUCTION_DOMAIN).toBe(false);
   });
 });

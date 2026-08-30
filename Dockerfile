@@ -12,12 +12,12 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
-# Canonical site origin baked in at build time. Defaults to PRODUCTION so a
-# forgotten build arg can never de-index conai.sk. Staging deploys may pass
-# their own URL for correct canonicals, but indexing protection does not
-# depend on it — non-production hosts get X-Robots-Tag + robots.txt disallow
-# at request time (see next.config.ts and app/robots.ts).
-ARG NEXT_PUBLIC_SITE_URL=https://conai.sk
+# Canonical site origin baked in at build time. Defaults to the CURRENT live
+# domain (conai.tomaskoller.sk). LAUNCH CHECKLIST for conai.sk: change this
+# default to https://conai.sk AND 301-redirect the subdomain to conai.sk.
+# Unknown hosts (previews, local) still get noindex at request time
+# (see next.config.ts and app/robots.ts).
+ARG NEXT_PUBLIC_SITE_URL=https://conai.tomaskoller.sk
 ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
 RUN npm run build
 

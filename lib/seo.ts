@@ -1,10 +1,20 @@
-const PRODUCTION_URL = "https://conai.sk";
+/**
+ * Origins allowed to be indexed. conai.tomaskoller.sk is the LIVE domain for
+ * now; at the conai.sk launch, make conai.sk the DEFAULT_URL below and 301
+ * the subdomain to it (see CLAUDE.md launch checklist).
+ */
+export const INDEXABLE_URLS = [
+  "https://conai.sk",
+  "https://conai.tomaskoller.sk",
+];
 
-/** Override per environment (e.g. a Coolify staging domain) at build time. */
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || PRODUCTION_URL;
+const DEFAULT_URL = "https://conai.tomaskoller.sk";
 
-/** Non-production domains must never be indexed alongside conai.sk. */
-export const IS_PRODUCTION_DOMAIN = SITE_URL === PRODUCTION_URL;
+/** Override per environment at build time. */
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || DEFAULT_URL;
+
+/** Anything not in the allowlist (previews, local) must never be indexed. */
+export const IS_PRODUCTION_DOMAIN = INDEXABLE_URLS.includes(SITE_URL);
 
 /**
  * Canonical for a path. Locale prefixes are never exposed in URLs
