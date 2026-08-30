@@ -12,8 +12,10 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
-# Canonical site origin, baked in at build time (defaults to https://conai.sk).
-ARG NEXT_PUBLIC_SITE_URL
+# Canonical site origin, baked in at build time.
+# STAGING DEFAULT — change to https://conai.sk (or pass the build arg) at launch,
+# otherwise production ships staging canonicals and a noindex flag!
+ARG NEXT_PUBLIC_SITE_URL=https://conai.tomaskoller.sk
 ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
 RUN npm run build
 
