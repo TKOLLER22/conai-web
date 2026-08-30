@@ -60,7 +60,7 @@ export default function Hero() {
   );
 
   useGSAP(
-    () => {
+    (_, contextSafe) => {
       // [data-hero-fade] elements start CSS-hidden (see globals.css) so the
       // intro never flashes. Whenever the intro won't run — touch device,
       // reduced motion, background tab, ?nomotion=1 — show them immediately.
@@ -75,27 +75,56 @@ export default function Hero() {
         return;
       }
 
-      const split = SplitText.create("[data-hero-title]", {
-        type: "lines",
-        mask: "lines",
-        autoSplit: true,
-      });
-
-      const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
-      tl.from(split.lines, {
-        yPercent: 115,
-        duration: 1.1,
-        stagger: 0.09,
-      })
-        .to(
-          "[data-hero-fade]",
-          { autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.1 },
-          "-=0.55",
-        )
-        .then(() => split.revert());
-
       // Fade targets start at opacity 0 via CSS; give them the slide offset.
       gsap.set("[data-hero-fade]", { y: 20 });
+
+      let fadesPlayed = false;
+      let started = false;
+      const startIntro = contextSafe!(() => {
+        if (started || !scope.current?.isConnected) return;
+        started = true;
+
+        SplitText.create("[data-hero-title]", {
+          type: "lines",
+          mask: "lines",
+          autoSplit: true,
+          // The tween is created HERE (not outside) so autoSplit can rebuild
+          // it with progress kept if lines change (font swap, resize).
+          onSplit(self) {
+            const tween = gsap.from(self.lines, {
+              yPercent: 115,
+              duration: 1.1,
+              stagger: 0.09,
+              ease: "power4.out",
+              // Restore natural text (incl. nbsp wrapping) when done —
+              // SplitText suspends non-breaking spaces while lines are split.
+              onComplete: () => self.revert(),
+            });
+            if (!fadesPlayed) {
+              fadesPlayed = true;
+              gsap.to("[data-hero-fade]", {
+                autoAlpha: 1,
+                y: 0,
+                duration: 0.8,
+                stagger: 0.1,
+                delay: 0.7,
+                ease: "power4.out",
+              });
+            }
+            return tween;
+          },
+        });
+      });
+
+      // Split only after webfonts are active: fallback-font metrics wrap the
+      // headline differently, which used to visibly snap on revert.
+      if (document.fonts?.status === "loaded") {
+        startIntro();
+      } else {
+        document.fonts.ready.then(startIntro);
+        // Safety net: never leave the intro un-started if fonts hang.
+        setTimeout(startIntro, 1500);
+      }
     },
     { scope },
   );
