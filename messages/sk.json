@@ -207,5 +207,383 @@
     "title": "Táto stránka neexistuje.",
     "description": "Buď sme ju presunuli, alebo ste na adrese, ktorá nikdy nežila. Skúste to z domovskej stránky.",
     "cta": "Späť na úvod"
+  },
+  "services": {
+    "meta": {
+      "title": "Služby pre firmy | ConAI",
+      "description": "Od bezplatného AI auditu po lokálne modely a systémy na mieru. Orientačné balíčky pre malé a stredné firmy."
+    },
+    "kicker": "Pre firmy",
+    "title": "Začnite tam, kde to dáva zmysel.",
+    "intro": "Každá spolupráca sa začína bezplatným hovorom a každá služba stavia na základoch tej pod ňou.",
+    "note": "Všetky ceny sú orientačné. Presné číslo vám dáme po bezplatnom audite — podľa rozsahu, nie podľa použitých nástrojov.",
+    "audit": {
+      "label": "Krok 0",
+      "title": "Bezplatný AI Audit",
+      "desc": "30-minútový úvodný hovor. Zmapujeme, kde sa AI vo vašej prevádzke oplatí — a či vôbec.",
+      "cta": "Rezervovať termín"
+    },
+    "forWho": "Pre koho",
+    "includesTitle": "Čo dostanete",
+    "examplesTitle": "Príklady riešení",
+    "tiers": [
+      {
+        "id": "navigation",
+        "level": "Úroveň 1",
+        "title": "Navigácia: audit a stratégia",
+        "price": "od ~500 €",
+        "for": "Firmy, ktoré vedia, že AI je téma, ale nevedia, kde začať.",
+        "includes": [
+          "Dôkladný audit pracovných postupov",
+          "Discovery workshop o vašich procesoch",
+          "AI roadmapa: miesta s najväčším dopadom automatizácie",
+          "Zaškolenie tímu: prompty a AI nástroje v praxi"
+        ],
+        "approach": "Odchádzate s AI plánom na mieru, ktorý viete zrealizovať s nami aj bez nás.",
+        "examples": []
+      },
+      {
+        "id": "pilot",
+        "level": "Úroveň 2",
+        "title": "Pilotná implementácia",
+        "price": "od ~2 500 €",
+        "for": "Firmy, ktoré chcú najprv vidieť jednu automatizáciu naostro a až potom škálovať.",
+        "includes": [
+          "Všetko z Navigácie",
+          "Jedna automatizácia s vysokým dopadom",
+          "Integrácia cez cloud API",
+          "Mesiac monitoringu a ladenia po spustení"
+        ],
+        "approach": "Vyberieme položku z roadmapy, postavíme ju, spustíme a 30 dní ladíme na reálnej prevádzke.",
+        "examples": [
+          {
+            "name": "Zákaznícke chatboty",
+            "desc": "podpora 24/7 natrénovaná na vašich dátach"
+          },
+          {
+            "name": "AI telefonická recepčná",
+            "desc": "vybavovanie hovorov s plánovaním termínov"
+          },
+          {
+            "name": "GEO optimalizácia",
+            "desc": "viditeľnosť v AI vyhľadávačoch"
+          },
+          {
+            "name": "Automatické párovanie faktúr"
+          },
+          {
+            "name": "Triedenie správ podľa naliehavosti"
+          },
+          {
+            "name": "Konverzačný príjem klientov"
+          },
+          {
+            "name": "Personalizovaný B2B outreach"
+          }
+        ]
+      },
+      {
+        "id": "local",
+        "level": "Úroveň 3",
+        "title": "Lokálne & na mieru",
+        "price": "od ~8 000 €",
+        "for": "Advokáti, lekári a firmy s know-how, ktorých dáta nesmú opustiť budovu.",
+        "includes": [
+          "Automatizácia procesov naprieč oddeleniami",
+          "Nasadenie lokálnych modelov na vašom hardvéri",
+          "Prepojenie s internou knižnicou poznatkov (RAG)"
+        ],
+        "approach": "Modely bežia u vás. Žiadny cloud, žiadne tretie strany.",
+        "examples": [
+          {
+            "name": "Súkromný lokálny RAG",
+            "desc": "bezpečná vektorová databáza nad internými dokumentmi"
+          },
+          {
+            "name": "On-premise AI infraštruktúra",
+            "desc": "GPU zostavy s modelmi ako Llama či Mistral"
+          }
+        ]
+      },
+      {
+        "id": "bespoke",
+        "level": "Bespoke",
+        "title": "AI produktový vývoj",
+        "price": "dohodneme rozsah",
+        "for": "Zakladatelia s produktovým nápadom alebo problémom, na ktorý neexistuje hotové riešenie.",
+        "includes": [
+          "Dátové pipeline-y a analytika na mieru",
+          "Platformy postavené od nuly",
+          "Python frameworky a multi-agentové systémy"
+        ],
+        "approach": "Naceňujeme ako produkt, nie ako balíček.",
+        "examples": [
+          {
+            "name": "Dynamic pricing v reálnom čase"
+          },
+          {
+            "name": "Programatickí brand ambasádori",
+            "desc": "generovanie vizuálov aj obsahu"
+          },
+          {
+            "name": "Spracovanie brokerských výpisov"
+          },
+          {
+            "name": "Multikanálový obsah z jedného zdroja"
+          }
+        ]
+      }
+    ],
+    "addon": {
+      "label": "Nadstavba úrovne 1",
+      "title": "Intenzívny workshop pre tím na mieru",
+      "price": "od ~800 €",
+      "priceNote": "podľa veľkosti a zloženia tímu",
+      "items": [
+        "3-hodinové praktické školenie — online alebo u vás",
+        "Knižnica promptov pre vaše oddelenia",
+        "Tréning na reálnych úlohách vašich ľudí",
+        "Záznam a Q&A po školení"
+      ]
+    },
+    "retainer": {
+      "label": "Dlhodobo",
+      "title": "Retainer & AI strategický poradca",
+      "price": "od ~300 €/mes.",
+      "for": "Klienti, ktorí chcú systémy dlhodobo ladiť a mať strategické vedenie po ruke.",
+      "includes": [
+        "Mesačné vyhodnotenie výkonu a ladenie promptov",
+        "Kvartálna strategická konzultácia",
+        "AI stratég s kontextom vašej firmy, k dispozícii priebežne"
+      ],
+      "approach": "Predplatné, ktoré drží systémy vyladené a stratégiu nohami na zemi."
+    },
+    "final": {
+      "title": "Neviete, ktorá priečka je tá vaša?",
+      "desc": "Presne na to slúži audit."
+    }
+  },
+  "pricing": {
+    "meta": {
+      "title": "Cenník | ConAI",
+      "description": "Orientačné ceny implementácie AI a ROI kalkulačka. Presné číslo dostanete po bezplatnom audite."
+    },
+    "kicker": "Cenník",
+    "title": "Koľko implementácia AI naozaj stojí",
+    "intro": "Nacenenie vychádza z rozsahu a komplexity projektu — nie z technológií, ktoré použijeme.",
+    "packages": [
+      {
+        "name": "Navigácia",
+        "price": "od ~500 €",
+        "desc": "audit, plán a stratégia po bezplatnom hovore",
+        "href": "/services#navigation"
+      },
+      {
+        "name": "Pilot",
+        "price": "od ~2 500 €",
+        "desc": "jedna automatizácia naostro",
+        "href": "/services#pilot"
+      },
+      {
+        "name": "Lokálne & na mieru",
+        "price": "od ~8 000 €",
+        "desc": "u vás, naprieč oddeleniami",
+        "href": "/services#local"
+      },
+      {
+        "name": "Vývoj na mieru",
+        "price": "podľa dohody",
+        "desc": "platformy a pipeline-y na mieru",
+        "href": "/services#bespoke"
+      },
+      {
+        "name": "Retainer / poradca",
+        "price": "od ~300 €/mes.",
+        "desc": "údržba + strategický poradca",
+        "href": "/services#retainer"
+      }
+    ],
+    "packagesCta": "Detaily balíčkov",
+    "factors": {
+      "title": "Čo určuje cenu",
+      "intro": "Nasadenie AI nie je produkt, ktorý hodíte do košíka. Cenu ovplyvňuje najmä:",
+      "items": [
+        "Zložitosť procesov",
+        "Počet systémov na prepojenie",
+        "Ako sú zorganizované existujúce procesy",
+        "Potreba zaškolenia tímu",
+        "Rozsah nasadenia"
+      ]
+    },
+    "roi": {
+      "kicker": "ROI kalkulačka",
+      "title": "Spočítajte si, čo vás stojí ručná práca",
+      "inputs": {
+        "people": "Koľko ľudí robí danú úlohu",
+        "rate": "Priemerná hodinová cena práce (€)",
+        "hours": "Hodín týždenne na osobu",
+        "errors": "Chybovosť / prerábanie (%)",
+        "budget": "Mesačný rozpočet na riešenie (€)"
+      },
+      "advanced": {
+        "title": "Pokročilé predpoklady",
+        "efficiency": "Zvýšenie efektivity vďaka AI (%)",
+        "errorReduction": "Zníženie chybovosti (%)",
+        "ramp": "Nábeh implementácie (týždne)"
+      },
+      "results": {
+        "title": "Orientačný výsledok",
+        "hours": "Ušetrené hodiny / mesiac",
+        "monthly": "Mesačná úspora",
+        "roi": "Ročné ROI",
+        "payback": "Návratnosť",
+        "paybackValue": "{months}. mesiac",
+        "paybackNever": "—"
+      },
+      "disclaimer": "Orientačné východiská, nie cenová ponuka. Presné číslo vám dáme na základe bezplatného auditu."
+    }
+  },
+  "work": {
+    "meta": {
+      "title": "Projekty | ConAI",
+      "description": "Zaujímavé projekty, na ktorých sme pracovali — od lokálnej AI a RAG po fintech analytiku a automatizáciu obsahu."
+    },
+    "kicker": "Projekty",
+    "title": "Zaujímavé projekty, na ktorých sme pracovali",
+    "intro": "Postavené pre firmy aj jednotlivcov — od marketingu po fintech.",
+    "ctaTitle": "Máte na mysli podobný projekt?",
+    "ctaDesc": "Poďme si ho naceniť.",
+    "items": [
+      {
+        "title": "Automatizovaný pipeline na generovanie obrázkov pre sociálne siete",
+        "tags": [
+          "Médiá a obsah",
+          "Generovanie obrázkov",
+          "Agentické workflowy",
+          "Orchestrácia n8n",
+          "On-premise",
+          "Suverenita dát"
+        ]
+      },
+      {
+        "title": "Lokálny multimodálny RAG engine",
+        "desc": "Retrieval-augmented generation nad súkromnými dokumentmi, obrázkami a hlasom.",
+        "tags": [
+          "LLM / GenAI",
+          "RAG",
+          "Multimodálna AI",
+          "Agentické workflowy",
+          "Suverenita dát"
+        ]
+      },
+      {
+        "title": "Zjednotený portfóliový dashboard naprieč brokermi",
+        "desc": "Konsolidovaná analytika v reálnom čase z výpisov viacerých brokerov.",
+        "tags": [
+          "FinTech",
+          "Analytický dashboard",
+          "Agregácia dát",
+          "Real-time",
+          "On-premise",
+          "Python"
+        ]
+      },
+      {
+        "title": "SAPSS: engine na detekciu short squeeze v reálnom čase",
+        "tags": [
+          "FinTech",
+          "NLP",
+          "Počítačové videnie",
+          "Real-time",
+          "Agentické workflowy",
+          "On-premise"
+        ]
+      },
+      {
+        "title": "Simulačný engine meme-stock trhu",
+        "desc": "Rozšíriteľná obchodná hra v reálnom čase.",
+        "tags": [
+          "FinTech",
+          "Gaming",
+          "Simulácia",
+          "Real-time",
+          "Kontajnerizované"
+        ]
+      },
+      {
+        "title": "Súkromný streamovací hub s automatizovaným pipeline",
+        "tags": [
+          "Médiá a obsah",
+          "Streamovacia platforma",
+          "Automatizácia procesov",
+          "Self-hosted",
+          "Privacy-first"
+        ]
+      },
+      {
+        "title": "Frog Movement Engine: navigácia postavy v reálnom čase",
+        "tags": [
+          "Gaming",
+          "Vývoj hier",
+          "Real-time",
+          "C# / Unity"
+        ]
+      },
+      {
+        "title": "Automatizovaný pipeline na generovanie titulkov",
+        "tags": [
+          "Médiá a obsah",
+          "Obsahový pipeline",
+          "Speech-to-Text",
+          "NLP",
+          "On-premise",
+          "Suverenita dát"
+        ]
+      },
+      {
+        "title": "Automatizovaný generatívny engine NFT artu",
+        "desc": "Škálovateľný pipeline na generovanie obrázkov pre NFT kolekcie.",
+        "tags": [
+          "Web3",
+          "Médiá a obsah",
+          "Generovanie obrázkov",
+          "LLM / GenAI",
+          "Node.js"
+        ]
+      },
+      {
+        "title": "Autonómny chat widget pre podporu a rezervácie",
+        "tags": [
+          "Zákaznícka podpora",
+          "Chatbot",
+          "LLM / GenAI",
+          "Orchestrácia n8n",
+          "Self-hosted",
+          "Kontajnerizované"
+        ]
+      },
+      {
+        "title": "Automatizovaný pipeline na výsledky a age-grading v masters atletike",
+        "tags": [
+          "Šport & podujatia",
+          "Agregácia dát",
+          "LLM / GenAI",
+          "Python",
+          "On-premise",
+          "Suverenita dát"
+        ]
+      }
+    ]
+  },
+  "bookAudit": {
+    "meta": {
+      "title": "Rezervovať AI Audit zadarmo | ConAI",
+      "description": "30-minútový bezplatný AI audit. Vyberte si termín, ktorý vám vyhovuje."
+    },
+    "kicker": "AI Audit zadarmo",
+    "title": "Vyberte si termín, ktorý vám vyhovuje.",
+    "intro": "30 minút, bez záväzkov. Všetko, čo si z hovoru odnesiete — postrehy, odporúčania aj nápady — ostáva vám. Prejdeme vaše procesy a spoločne posúdime, či u vás AI dáva zmysel.",
+    "note": "Pred rezerváciou prosím do poznámky uveďte meno a priezvisko, telefón a názov firmy alebo web.",
+    "fallback": "Kalendár sa nenačítal? Otvorte ho v novom okne"
   }
 }

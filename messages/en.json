@@ -207,5 +207,383 @@
     "title": "This page doesn't exist.",
     "description": "Either we moved it, or you've reached an address that never lived. Try again from the homepage.",
     "cta": "Back to home"
+  },
+  "services": {
+    "meta": {
+      "title": "Services for companies | ConAI",
+      "description": "From a free AI audit to local models and bespoke systems. Orientation packages for small and mid-sized companies."
+    },
+    "kicker": "For companies",
+    "title": "Start where it makes sense.",
+    "intro": "Every collaboration starts with a free call, and every service builds on the one below it.",
+    "note": "All prices are indicative. You'll get an exact number after the free audit — based on scope, not on the tools we use.",
+    "audit": {
+      "label": "Step 0",
+      "title": "Free AI Audit",
+      "desc": "A 30-minute intro call. We map where AI pays off in your operation — and whether it does at all.",
+      "cta": "Book a slot"
+    },
+    "forWho": "Who it's for",
+    "includesTitle": "What you get",
+    "examplesTitle": "Example solutions",
+    "tiers": [
+      {
+        "id": "navigation",
+        "level": "Level 1",
+        "title": "Navigation: audit & strategy",
+        "price": "from ~€500",
+        "for": "Companies that know AI matters but don't know where to start.",
+        "includes": [
+          "A thorough audit of your workflows",
+          "Discovery workshop on your processes",
+          "AI roadmap: the highest-impact automation spots",
+          "Team training: prompts and AI tools in practice"
+        ],
+        "approach": "You leave with a tailored AI plan you can execute with us or without us.",
+        "examples": []
+      },
+      {
+        "id": "pilot",
+        "level": "Level 2",
+        "title": "Pilot implementation",
+        "price": "from ~€2,500",
+        "for": "Companies that want to see one automation running live before scaling.",
+        "includes": [
+          "Everything from Navigation",
+          "One high-impact automation",
+          "Cloud API integration",
+          "A month of monitoring and tuning after launch"
+        ],
+        "approach": "We pick an item from the roadmap, build it, ship it and tune it on live traffic for 30 days.",
+        "examples": [
+          {
+            "name": "Customer chatbots",
+            "desc": "24/7 support trained on your data"
+          },
+          {
+            "name": "AI phone receptionist",
+            "desc": "call handling with appointment booking"
+          },
+          {
+            "name": "GEO optimization",
+            "desc": "visibility in AI search engines"
+          },
+          {
+            "name": "Automatic invoice matching"
+          },
+          {
+            "name": "Urgency-based message triage"
+          },
+          {
+            "name": "Conversational client intake"
+          },
+          {
+            "name": "Personalized B2B outreach"
+          }
+        ]
+      },
+      {
+        "id": "local",
+        "level": "Level 3",
+        "title": "Local & custom",
+        "price": "from ~€8,000",
+        "for": "Lawyers, doctors and firms with know-how whose data must never leave the building.",
+        "includes": [
+          "Process automation across departments",
+          "Local model deployment on your hardware",
+          "Integration with your internal knowledge base (RAG)"
+        ],
+        "approach": "Models run on-site. No cloud, no third parties.",
+        "examples": [
+          {
+            "name": "Private local RAG",
+            "desc": "a secure vector database over internal documents"
+          },
+          {
+            "name": "On-premise AI infrastructure",
+            "desc": "GPU rigs running models like Llama or Mistral"
+          }
+        ]
+      },
+      {
+        "id": "bespoke",
+        "level": "Bespoke",
+        "title": "AI product development",
+        "price": "custom scope",
+        "for": "Founders with a product idea or a problem no off-the-shelf tool solves.",
+        "includes": [
+          "Custom data pipelines and analytics",
+          "Platforms built from scratch",
+          "Python frameworks and multi-agent systems"
+        ],
+        "approach": "Priced as a product, not a package.",
+        "examples": [
+          {
+            "name": "Real-time dynamic pricing"
+          },
+          {
+            "name": "Programmatic brand ambassadors",
+            "desc": "generating visuals and content"
+          },
+          {
+            "name": "Broker statement processing"
+          },
+          {
+            "name": "Multi-channel content from a single source"
+          }
+        ]
+      }
+    ],
+    "addon": {
+      "label": "Level 1 add-on",
+      "title": "Intensive custom team workshop",
+      "price": "from ~€800",
+      "priceNote": "depends on team size and mix",
+      "items": [
+        "3-hour hands-on training — online or on-site",
+        "A prompt library for your departments",
+        "Practice on your people's real tasks",
+        "Recording and post-session Q&A"
+      ]
+    },
+    "retainer": {
+      "label": "Long term",
+      "title": "Retainer & AI strategic advisor",
+      "price": "from ~€300/mo",
+      "for": "Clients who want their systems tuned long-term and strategic guidance on tap.",
+      "includes": [
+        "Monthly performance reviews and prompt tuning",
+        "Quarterly strategy consultation",
+        "An AI strategist with your company's context, available as you go"
+      ],
+      "approach": "A subscription that keeps systems sharp and strategy grounded."
+    },
+    "final": {
+      "title": "Not sure which rung is yours?",
+      "desc": "That's exactly what the audit is for."
+    }
+  },
+  "pricing": {
+    "meta": {
+      "title": "Pricing | ConAI",
+      "description": "Indicative AI implementation pricing and an ROI calculator. You get an exact number after the free audit."
+    },
+    "kicker": "Pricing",
+    "title": "What AI implementation really costs",
+    "intro": "Pricing is driven by project scope and complexity — not by the technologies we use.",
+    "packages": [
+      {
+        "name": "Navigation",
+        "price": "from ~€500",
+        "desc": "audit, plan and strategy after a free call",
+        "href": "/services#navigation"
+      },
+      {
+        "name": "Pilot",
+        "price": "from ~€2,500",
+        "desc": "one automation running live",
+        "href": "/services#pilot"
+      },
+      {
+        "name": "Local & custom",
+        "price": "from ~€8,000",
+        "desc": "on your hardware, across departments",
+        "href": "/services#local"
+      },
+      {
+        "name": "Bespoke development",
+        "price": "custom scope",
+        "desc": "platforms and pipelines built to order",
+        "href": "/services#bespoke"
+      },
+      {
+        "name": "Retainer / advisor",
+        "price": "from ~€300/mo",
+        "desc": "maintenance + a strategic advisor",
+        "href": "/services#retainer"
+      }
+    ],
+    "packagesCta": "Package details",
+    "factors": {
+      "title": "What drives the price",
+      "intro": "Deploying AI isn't a product you drop into a cart. The price mostly depends on:",
+      "items": [
+        "Process complexity",
+        "Number of systems to integrate",
+        "How organized your existing processes are",
+        "Team training needs",
+        "Scope of the rollout"
+      ]
+    },
+    "roi": {
+      "kicker": "ROI calculator",
+      "title": "See what manual work is costing you",
+      "inputs": {
+        "people": "People doing the task",
+        "rate": "Average hourly labour cost (€)",
+        "hours": "Hours per week per person",
+        "errors": "Error / rework rate (%)",
+        "budget": "Monthly budget for the solution (€)"
+      },
+      "advanced": {
+        "title": "Advanced assumptions",
+        "efficiency": "Efficiency gain from AI (%)",
+        "errorReduction": "Error-rate reduction (%)",
+        "ramp": "Implementation ramp-up (weeks)"
+      },
+      "results": {
+        "title": "Indicative result",
+        "hours": "Hours saved / month",
+        "monthly": "Monthly saving",
+        "roi": "Yearly ROI",
+        "payback": "Payback",
+        "paybackValue": "month {months}",
+        "paybackNever": "—"
+      },
+      "disclaimer": "Indicative assumptions, not a quote. You'll get an exact number based on the free audit."
+    }
+  },
+  "work": {
+    "meta": {
+      "title": "Projects | ConAI",
+      "description": "Interesting projects we've worked on — from local AI and RAG to fintech analytics and content automation."
+    },
+    "kicker": "Projects",
+    "title": "Interesting projects we've worked on",
+    "intro": "Built for real businesses and individuals — from marketing to fintech.",
+    "ctaTitle": "Have a similar project in mind?",
+    "ctaDesc": "Let's price it together.",
+    "items": [
+      {
+        "title": "Automated image-generation pipeline for social media",
+        "tags": [
+          "Media & content",
+          "Image generation",
+          "Agentic workflows",
+          "n8n orchestration",
+          "On-premise",
+          "Data sovereignty"
+        ]
+      },
+      {
+        "title": "Local multimodal RAG engine",
+        "desc": "Retrieval-augmented generation over private documents, images and voice.",
+        "tags": [
+          "LLM / GenAI",
+          "RAG",
+          "Multimodal AI",
+          "Agentic workflows",
+          "Data sovereignty"
+        ]
+      },
+      {
+        "title": "Unified portfolio dashboard across brokers",
+        "desc": "Consolidated real-time analytics from statements across multiple brokers.",
+        "tags": [
+          "FinTech",
+          "Analytics dashboard",
+          "Data aggregation",
+          "Real-time",
+          "On-premise",
+          "Python"
+        ]
+      },
+      {
+        "title": "SAPSS: real-time short-squeeze detection engine",
+        "tags": [
+          "FinTech",
+          "NLP",
+          "Computer vision",
+          "Real-time",
+          "Agentic workflows",
+          "On-premise"
+        ]
+      },
+      {
+        "title": "Meme-stock market simulation engine",
+        "desc": "An extensible real-time trading game.",
+        "tags": [
+          "FinTech",
+          "Gaming",
+          "Simulation",
+          "Real-time",
+          "Containerized"
+        ]
+      },
+      {
+        "title": "Private streaming hub with an automated pipeline",
+        "tags": [
+          "Media & content",
+          "Streaming platform",
+          "Process automation",
+          "Self-hosted",
+          "Privacy-first"
+        ]
+      },
+      {
+        "title": "Frog Movement Engine: real-time character navigation",
+        "tags": [
+          "Gaming",
+          "Game development",
+          "Real-time",
+          "C# / Unity"
+        ]
+      },
+      {
+        "title": "Automated subtitle-generation pipeline",
+        "tags": [
+          "Media & content",
+          "Content pipeline",
+          "Speech-to-text",
+          "NLP",
+          "On-premise",
+          "Data sovereignty"
+        ]
+      },
+      {
+        "title": "Automated generative NFT art engine",
+        "desc": "A scalable image-generation pipeline for NFT collections.",
+        "tags": [
+          "Web3",
+          "Media & content",
+          "Image generation",
+          "LLM / GenAI",
+          "Node.js"
+        ]
+      },
+      {
+        "title": "Autonomous chat widget for support and bookings",
+        "tags": [
+          "Customer support",
+          "Chatbot",
+          "LLM / GenAI",
+          "n8n orchestration",
+          "Self-hosted",
+          "Containerized"
+        ]
+      },
+      {
+        "title": "Automated results & age-grading pipeline for masters athletics",
+        "tags": [
+          "Sports & events",
+          "Data aggregation",
+          "LLM / GenAI",
+          "Python",
+          "On-premise",
+          "Data sovereignty"
+        ]
+      }
+    ]
+  },
+  "bookAudit": {
+    "meta": {
+      "title": "Book a free AI Audit | ConAI",
+      "description": "A free 30-minute AI audit. Pick a time that suits you."
+    },
+    "kicker": "Free AI Audit",
+    "title": "Pick a time that suits you.",
+    "intro": "30 minutes, no strings attached. Everything you take away from the call — insights, recommendations, ideas — is yours to keep. We'll walk through your processes and judge together whether AI makes sense for you.",
+    "note": "Before booking, please add your full name, phone number and company name or website to the notes field.",
+    "fallback": "Calendar didn't load? Open it in a new window"
   }
 }

@@ -38,6 +38,10 @@
     -webkit-text-size-adjust: 100%;
   }
 
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+
   body {
     background-color: var(--color-ink-900);
     color: var(--color-fg);
