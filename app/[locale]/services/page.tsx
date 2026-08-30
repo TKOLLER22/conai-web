@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Check } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { seoAlternates } from "@/lib/seo";
 import Button from "@/components/ui/Button";
 import FinalCta from "@/components/home/FinalCta";
 import PageHeader from "@/components/ui/PageHeader";
@@ -12,7 +13,11 @@ export async function generateMetadata({
 }: PageProps<"/[locale]/services">): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "services.meta" });
-  return { title: t("title"), description: t("description") };
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: seoAlternates(locale, "/services"),
+  };
 }
 
 type Tier = {

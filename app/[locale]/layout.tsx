@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque, Inter, JetBrains_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import { SITE_URL } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/layout/SmoothScroll";
@@ -28,8 +30,41 @@ const jetbrains = JetBrains_Mono({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "ConAI",
+export async function generateMetadata({
+  params,
+}: Omit<LayoutProps<"/[locale]">, "children">): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "home.meta" });
+
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: t("title"),
+    description: t("description"),
+    openGraph: {
+      siteName: "ConAI",
+      type: "website",
+      locale: locale === "sk" ? "sk_SK" : "en_US",
+    },
+    twitter: { card: "summary_large_image" },
+  };
+}
+
+const ORGANIZATION_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "ConAI",
+  legalName: "ELYSIA, s. r. o.",
+  url: SITE_URL,
+  logo: `${SITE_URL}/brand/logo-232.png`,
+  email: "info@conai.sk",
+  sameAs: ["https://www.linkedin.com/company/conai-ai-solutions-for-smes"],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Tranovského 36",
+    postalCode: "841 02",
+    addressLocality: "Bratislava",
+    addressCountry: "SK",
+  },
 };
 
 export function generateStaticParams() {
@@ -53,6 +88,7 @@ export default async function LocaleLayout({
       className={`${bricolage.variable} ${inter.variable} ${jetbrains.variable}`}
     >
       <body>
+        <JsonLd data={ORGANIZATION_JSONLD} />
         <noscript>
           <style>{`[data-reveal]{opacity:1 !important;transform:none !important}`}</style>
         </noscript>

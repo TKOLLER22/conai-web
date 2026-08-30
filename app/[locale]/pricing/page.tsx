@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { seoAlternates } from "@/lib/seo";
 import { Link } from "@/i18n/navigation";
 import Calculator from "@/components/roi/Calculator";
 import FinalCta from "@/components/home/FinalCta";
@@ -14,7 +15,11 @@ export async function generateMetadata({
 }: PageProps<"/[locale]/pricing">): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "pricing.meta" });
-  return { title: t("title"), description: t("description") };
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: seoAlternates(locale, "/pricing"),
+  };
 }
 
 type Package = { name: string; price: string; desc: string; href: string };

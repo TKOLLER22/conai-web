@@ -7,6 +7,7 @@ import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { getInsight, getInsights } from "@/lib/insights";
 import FinalCta from "@/components/home/FinalCta";
+import JsonLd from "@/components/seo/JsonLd";
 import Reveal from "@/components/ui/Reveal";
 import { Container } from "@/components/ui/Section";
 
@@ -22,7 +23,11 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const insight = getInsight(locale, slug);
   if (!insight) return {};
-  return { title: `${insight.title} | ConAI`, description: insight.excerpt };
+  return {
+    title: `${insight.title} | ConAI`,
+    description: insight.excerpt,
+    alternates: { canonical: `/${locale}/insights/${slug}` },
+  };
 }
 
 export default async function InsightPage({
@@ -43,6 +48,17 @@ export default async function InsightPage({
 
   return (
     <main>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: insight.title,
+          description: insight.excerpt,
+          datePublished: insight.date,
+          inLanguage: locale,
+          author: { "@type": "Organization", name: "ConAI" },
+        }}
+      />
       <article className="relative overflow-hidden pb-20 pt-36 md:pb-28 md:pt-44">
         <div
           aria-hidden

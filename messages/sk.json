@@ -201,6 +201,11 @@
     },
     "cta": {
       "title": "Zistite, či je vaša firma pripravená na nasadenie AI."
+    },
+    "meta": {
+      "title": "ConAI | Implementácia AI a vývoj pre firmy",
+      "description": "Implementácia, vývoj a poradenstvo pre malé a stredné firmy na Slovensku a v Česku. Od bezplatného auditu až po systémy na mieru.",
+      "ogTagline": "Implementácia AI a vývoj pre firmy"
     }
   },
   "notFound": {

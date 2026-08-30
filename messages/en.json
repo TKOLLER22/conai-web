@@ -201,6 +201,11 @@
     },
     "cta": {
       "title": "Find out if your company is ready for AI."
+    },
+    "meta": {
+      "title": "ConAI | AI implementation & engineering for SMEs",
+      "description": "AI implementation, engineering and consulting for small and mid-sized companies across Slovakia and Czechia. From a free audit to fully custom systems.",
+      "ogTagline": "AI implementation & engineering for SMEs"
     }
   },
   "notFound": {

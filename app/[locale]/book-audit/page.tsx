@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowUpRight, Check } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { seoAlternates } from "@/lib/seo";
 import CalEmbed from "@/components/book/CalEmbed";
 import PageHeader from "@/components/ui/PageHeader";
 import Reveal from "@/components/ui/Reveal";
@@ -11,7 +12,11 @@ export async function generateMetadata({
 }: PageProps<"/[locale]/book-audit">): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "bookAudit.meta" });
-  return { title: t("title"), description: t("description") };
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: seoAlternates(locale, "/book-audit"),
+  };
 }
 
 export default async function BookAuditPage({

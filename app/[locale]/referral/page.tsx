@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { seoAlternates } from "@/lib/seo";
 import Button from "@/components/ui/Button";
 import Kicker from "@/components/ui/Kicker";
 import Reveal from "@/components/ui/Reveal";
@@ -10,7 +11,11 @@ export async function generateMetadata({
 }: PageProps<"/[locale]/referral">): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "referral.meta" });
-  return { title: t("title"), description: t("description") };
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: seoAlternates(locale, "/referral"),
+  };
 }
 
 export default async function ReferralPage({

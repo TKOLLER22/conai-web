@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Plus } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { seoAlternates } from "@/lib/seo";
 import FinalCta from "@/components/home/FinalCta";
+import JsonLd from "@/components/seo/JsonLd";
 import Kicker from "@/components/ui/Kicker";
 import PageHeader from "@/components/ui/PageHeader";
 import Reveal from "@/components/ui/Reveal";
@@ -12,7 +14,11 @@ export async function generateMetadata({
 }: PageProps<"/[locale]/about">): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "about.meta" });
-  return { title: t("title"), description: t("description") };
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: seoAlternates(locale, "/about"),
+  };
 }
 
 export default async function AboutPage({ params }: PageProps<"/[locale]/about">) {
@@ -25,6 +31,17 @@ export default async function AboutPage({ params }: PageProps<"/[locale]/about">
 
   return (
     <main>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faq.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }}
+      />
       <PageHeader kicker={t("kicker")} title={t("title")} />
 
       <Container>

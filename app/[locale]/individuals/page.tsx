@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { seoAlternates } from "@/lib/seo";
 import FinalCta from "@/components/home/FinalCta";
 import PageHeader from "@/components/ui/PageHeader";
 import Reveal from "@/components/ui/Reveal";
@@ -10,7 +11,11 @@ export async function generateMetadata({
 }: PageProps<"/[locale]/individuals">): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "individuals.meta" });
-  return { title: t("title"), description: t("description") };
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: seoAlternates(locale, "/individuals"),
+  };
 }
 
 type Offer = { title: string; desc: string; price?: string };
